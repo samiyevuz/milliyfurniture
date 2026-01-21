@@ -1,4 +1,4 @@
-<!-- <header class="bg-white">
+<header class="bg-white border-b border-gray-100">
     <div class="container mx-auto px-4 py-6 flex items-center justify-between">
 
         {{-- Logo --}}
@@ -14,7 +14,7 @@
             <a href="#" class="hover:text-[#0A4C8A] transition">Gallery</a>
         </nav>
 
-        {{-- Mobile Menu Icon --}}
+        {{-- Mobile icon (keyin JS qilamiz) --}}
         <button class="md:hidden text-gray-700">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
                  viewBox="0 0 24 24" stroke="currentColor">
@@ -24,9 +24,4 @@
         </button>
 
     </div>
-</header> -->
-
-
-<header style="padding:20px;border-bottom:1px solid #eee;">
-    <strong>Furniture</strong>
 </header>
