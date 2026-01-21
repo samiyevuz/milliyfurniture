@@ -111,8 +111,8 @@
 }
 
 .feature-icon {
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,7 +124,7 @@
 }
 
 .feature-text h4 {
-    font-size: 96px;
+    font-size: 22px;
     font-weight: 600;
     color: #0a2540;
     margin: 0;
@@ -132,6 +132,6 @@
 
 .feature-text p {
     margin-top: 4px;
-    font-size: 94px;
+    font-size: 20px;
     color: #6b7280;
 }
