@@ -92,7 +92,7 @@
 .features-section {
     background: #f5f7fb;
     padding: 56px 0;
-    display: flex;
+    display: space-between;
     justify-content: center;
     align-items: center;
 }
