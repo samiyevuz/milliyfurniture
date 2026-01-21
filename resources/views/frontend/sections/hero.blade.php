@@ -14,7 +14,7 @@
     {{-- Content --}}
     <div class="relative h-full container mx-auto px-4 flex items-center justify-end">
 
-        <div class="bg-[#E9F1F8] rounded-2xl p-55 max-w-xl w-full shadow-lg">
+        <div class="bg-[#E9F1F8] rounded-2xl p-14 max-w-xl w-full shadow-lg">
 
             <span class="text-xs uppercase tracking-[0.3em] text-gray-500">
                 New Arrival
