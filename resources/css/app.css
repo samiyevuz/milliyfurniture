@@ -92,16 +92,17 @@
 .features-section {
     background: #f5f7fb;
     padding: 56px 0;
-
+    display: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .features-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 54px;
-    display: space-between;
-    justify-content: center;
-    align-items: center;
+    padding: 0 24px;
+
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
 }
