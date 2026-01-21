@@ -1,4 +1,4 @@
-<header class="bg-white">
+<!-- <header class="bg-white">
     <div class="container mx-auto px-4 py-6 flex items-center justify-between">
 
         {{-- Logo --}}
@@ -24,4 +24,9 @@
         </button>
 
     </div>
+</header> -->
+
+
+<header style="padding:20px;border-bottom:1px solid #eee;">
+    <strong>Furniture</strong>
 </header>
