@@ -1,10 +1,10 @@
 <section
     class="relative w-full overflow-hidden pt-24"
     style="
-        height: 100vh;
+        height: 50vh;
         background-image: url('{{ asset('assets/images/hero-bg.png') }}');
         background-size: cover;
-        background-position: center 100%;
+        background-position: center 82%;
         background-repeat: no-repeat;
     "
 >
@@ -41,3 +41,4 @@
         </div>
     </div>
 </section>
+    
