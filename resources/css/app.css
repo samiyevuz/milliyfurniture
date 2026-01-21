@@ -24,8 +24,8 @@
     background-repeat: no-repeat;
     background-position: center 82%;
     overflow: hidden;
- 
 }
+
 
 .hero-overlay {
     position: absolute;
@@ -98,11 +98,10 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
-    display: space-between;
-    justify-content: center;
-    align-items: center;
-    /* grid-template-columns: repeat(3, 1fr);
-    gap: 48px; */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
 }
 
 .feature-item {
