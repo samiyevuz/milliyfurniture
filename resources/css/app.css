@@ -24,6 +24,9 @@
     background-repeat: no-repeat;
     background-position: center 82%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-overlay {
