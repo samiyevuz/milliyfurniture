@@ -101,8 +101,8 @@
     display: space-between;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    /* grid-template-columns: repeat(3, 1fr);
+    gap: 48px; */
 }
 
 .feature-item {
