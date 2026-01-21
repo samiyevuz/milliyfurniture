@@ -1,5 +1,5 @@
 <section
-    class="relative min-h-[80vh] w-full bg-no-repeat bg-cover bg-center"
+    class="relative min-h-[10vh] w-full bg-no-repeat bg-cover bg-center"
     style="background-image: url('{{ asset('assets/images/hero-bg.png') }}');"
 >
     {{-- Content wrapper --}}
