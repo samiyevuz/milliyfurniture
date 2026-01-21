@@ -27,3 +27,40 @@
         </a>
     </div>
 </section>
+
+<section class="features-section">
+    <div class="features-container">
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="{{ asset('assets/icons/delivery.svg') }}" alt="">
+            </div>
+            <div class="feature-text">
+                <h4>Free Delivery</h4>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="{{ asset('assets/icons/support.svg') }}" alt="">
+            </div>
+            <div class="feature-text">
+                <h4>Support 24/7</h4>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="{{ asset('assets/icons/shield.svg') }}" alt="">
+            </div>
+            <div class="feature-text">
+                <h4>100% Authentic</h4>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
