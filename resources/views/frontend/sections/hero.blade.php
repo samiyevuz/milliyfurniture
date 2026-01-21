@@ -13,7 +13,8 @@
 
     {{-- Content --}}
     <div class="relative h-full container mx-auto px-4">
-        <div class="absolute right-4 lg:right-20 top-1/2 translate-y-[-35%]">
+        {{-- ✅ Faqat shu joyi tuzatildi --}}
+        <div class="absolute right-4 lg:right-24 top-1/2 translate-y-[-50%] lg:translate-y-[-45%]">
 
             <div class="bg-[#E9F1F8] rounded-2xl p-14 max-w-xl w-full shadow-lg">
 
@@ -41,4 +42,3 @@
         </div>
     </div>
 </section>
-    
