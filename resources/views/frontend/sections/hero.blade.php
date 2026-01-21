@@ -1,32 +1,44 @@
 <section
-    class="relative min-h-[10vh] w-full bg-no-repeat bg-cover bg-center"
-    style="background-image: url('{{ asset('assets/images/hero-bg.png') }}');"
+    class="relative w-full overflow-hidden pt-24"
+    style="
+        height: 80vh;
+        background-image: url('{{ asset('assets/images/hero-bg.png') }}');
+        background-size: cover;
+        background-position: center 82%;
+        background-repeat: no-repeat;
+    "
 >
-    {{-- Content wrapper --}}
-    <div class="relative max-w-7xl mx-auto h-full px-6 flex items-center justify-end">
-        
-        {{-- Floating Card --}}
-        <div class="bg-[#E8F1F8] rounded-3xl shadow-xl p-12 max-w-xl">
-            
-            <span class="text-xs uppercase tracking-widest text-gray-500">
-                New Arrival
-            </span>
+    {{-- Very soft overlay --}}
+    <div class="absolute inset-0 bg-white/20"></div>
 
-            <h1 class="mt-4 text-4xl lg:text-5xl font-extrabold text-[#0A2540] leading-tight">
-                Discover Our <br>
-                New Collection
-            </h1>
+    {{-- Content --}}
+    <div class="relative h-full container mx-auto px-4">
+        <div class="absolute right-4 lg:right-20 top-1/2 translate-y-[-35%]">
 
-            <p class="mt-6 text-gray-600 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Ut elit tellus, luctus nec ullamcorper mattis.
-            </p>
+            <div class="bg-[#E9F1F8] rounded-2xl p-14 max-w-xl w-full shadow-lg">
 
-            <a href="#"
-               class="inline-block mt-8 px-10 py-4 rounded-full bg-[#0A4C8A] text-white font-semibold hover:bg-[#083b6b] transition">
-                Buy Now
-            </a>
+                <span class="text-xs uppercase tracking-[0.3em] text-gray-500">
+                    New Arrival
+                </span>
+
+                <h1 class="mt-5 text-4xl lg:text-[44px] font-bold text-[#0A2540] leading-tight">
+                    Discover Our <br>
+                    New Collection
+                </h1>
+
+                <p class="mt-6 text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Ut elit tellus, luctus nec ullamcorper mattis.
+                </p>
+
+                <a href="#"
+                   class="inline-flex items-center justify-center mt-10 px-12 py-4 rounded-full bg-[#0A4C8A] text-white font-semibold hover:bg-[#083b6b] transition">
+                    Buy Now
+                </a>
+
+            </div>
 
         </div>
     </div>
 </section>
+    
