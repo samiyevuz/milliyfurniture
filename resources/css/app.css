@@ -1,19 +1,21 @@
 @import 'tailwindcss';
 
+/* Blade & JS scan (vite uchun) */
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/* Theme */
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-
-/* =========================
-   HERO + FEATURES (CUSTOM)
-========================= */
+/* =================================================
+   HERO SECTION
+================================================= */
 
 .hero-section {
     position: relative;
@@ -21,6 +23,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 82%;
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -35,32 +38,83 @@
     top: 50%;
     transform: translateY(-50%);
     background: #e9f1f8;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 56px;
     max-width: 520px;
     width: 100%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* FEATURES */
+.hero-card span {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.hero-card h1 {
+    margin-top: 20px;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0a2540;
+}
+
+.hero-card p {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+.hero-card a {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 48px;
+    border-radius: 999px;
+    background: #0a4c8a;
+    color: #ffffff;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.hero-card a:hover {
+    background: #083b6b;
+}
+
+/* =================================================
+   FEATURES SECTION (FIGMA GA MOS)
+================================================= */
+
 .features-section {
-    background: #003aaf;
-    padding: 48px 0;
+    background: #f5f7fb;
+    padding: 56px 0;
 }
 
 .features-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 24px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
-    padding: 0 16px;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .feature-icon img {
@@ -72,10 +126,11 @@
     font-size: 16px;
     font-weight: 600;
     color: #0a2540;
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .feature-text p {
+    margin-top: 4px;
     font-size: 14px;
     color: #6b7280;
 }
