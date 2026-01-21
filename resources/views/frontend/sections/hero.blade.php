@@ -13,7 +13,7 @@
 
     {{-- TEXT CARD --}}
     <div
-        class="absolute right-16 top-1/2 -translate-y-1/2
+        class="absolute right-96 top-1/2 -translate-y-1/2
                bg-[#E9F1F8] rounded-2xl p-14 max-w-xl w-full shadow-lg"
     >
         <span class="text-xs uppercase tracking-[0.3em] text-gray-500">
