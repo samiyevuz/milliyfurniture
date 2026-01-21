@@ -28,6 +28,8 @@
     </div>
 </section>
 
+
+
 <section class="features-section">
     <div class="features-container">
 
@@ -36,7 +38,7 @@
                 <img src="{{ asset('assets/icons/delivery.svg') }}" alt="">
             </div>
             <div class="feature-text">
-                <h4>Free Delivery</h4>
+                <h4>Freeeeeeeeeeeeeeeee Delivery</h4>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
         </div>
