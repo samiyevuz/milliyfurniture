@@ -25,9 +25,6 @@
     background-position: center 82%;
     overflow: hidden;
 }
-body{
-    background-color: red;
-}
 
 .hero-overlay {
     position: absolute;
