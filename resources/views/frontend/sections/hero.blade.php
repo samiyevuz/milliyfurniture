@@ -4,7 +4,7 @@
         height: 100vh;
         background-image: url('{{ asset('assets/images/hero-bg.png') }}');
         background-size: cover;
-        background-position: center 52%;
+        background-position: center 100%;
         background-repeat: no-repeat;
     "
 >
