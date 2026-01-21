@@ -13,7 +13,7 @@
 
             {{-- Right content --}}
             <div class="flex justify-center lg:justify-end">
-                <div class="bg-[#E9F1F8] rounded-2xl p-12 max-w-xl w-full shadow-md border-radius-2xl">
+                <div class="bg-[#E9F1F8] rounded-2xl p-12 max-w-xl w-full shadow-md border-radius-2xl background-color: #E9F1F8;">
 
                     <span class="text-xs uppercase tracking-[0.3em] text-gray-500">
                         New Arrival
