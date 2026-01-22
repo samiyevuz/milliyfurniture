@@ -186,3 +186,72 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+
+/* =========================
+   BEAUTIFY YOUR SPACE
+========================= */
+
+.beautify-section {
+    background: #f5f7fb;
+    padding: 100px 0;
+}
+
+.beautify-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.beautify-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 20px;
+}
+
+.beautify-content p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 32px;
+}
+
+.beautify-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: #0a4c8a;
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.beautify-image {
+    position: relative;
+}
+
+.beautify-image img {
+    width: 100%;
+    border-radius: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+/* green shape */
+.beautify-image::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 280px;
+    height: 280px;
+    background: #0a7c6a;
+    border-radius: 50%;
+    z-index: 1;
+}

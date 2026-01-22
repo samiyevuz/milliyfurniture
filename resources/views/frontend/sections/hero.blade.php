@@ -95,3 +95,27 @@
 
     </div>
 </section>
+
+
+
+{{-- BEAUTIFY YOUR SPACE --}}
+<section class="beautify-section">
+    <div class="beautify-container">
+
+        <div class="beautify-content">
+            <h2>Beautify Your Space</h2>
+
+            <p>
+                Do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+
+            <a href="#" class="beautify-btn">Learn More</a>
+        </div>
+
+        <div class="beautify-image">
+            <img src="{{ asset('assets/images/beautify.png') }}" alt="Beautify">
+        </div>
+
+    </div>
+</section>
