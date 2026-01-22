@@ -370,7 +370,7 @@
 .how-image img {
     width: 100%;
     display: block;
-    position: relative
+    
 }
 
 .how-step {
@@ -387,8 +387,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute; bottom: -20px; left: 50%;
-    transform: translateX(-50%)
 }
 
 .how-card h4 {
