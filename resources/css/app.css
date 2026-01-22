@@ -313,3 +313,91 @@
     font-weight: 600;
     color: #0a2540;
 }
+
+
+
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-section {
+    background: #f5f7fb;
+    padding: 100px 0;
+}
+
+.how-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 16px;
+}
+
+.how-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.how-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 12px;
+}
+
+.how-header p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.how-card {
+    text-align: center;
+}
+
+.how-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.how-image img {
+    width: 100%;
+    display: block;
+}
+
+.how-step {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: #0a4c8a;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-card h4 {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0a2540;
+    margin-bottom: 8px;
+}
+
+.how-card p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
