@@ -228,3 +228,40 @@
     </div>
 </section>
 
+
+
+
+{{-- FOOTER --}}
+<footer class="site-footer">
+    <div class="footer-container">
+
+        {{-- LEFT --}}
+        <div class="footer-about">
+            <h4>Beauty Care</h4>
+            <p>
+                Do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+
+            <span class="footer-label">Follow Us</span>
+            <div class="footer-socials">
+                <a href="#">Fb</a>
+                <a href="#">Ig</a>
+                <a href="#">Tw</a>
+            </div>
+        </div>
+
+        {{-- RIGHT --}}
+        <div class="footer-instagram">
+            <h4>Instagram Shop</h4>
+
+            <div class="instagram-grid">
+                <img src="{{ asset('assets/images/insta-1.jpg') }}" alt="">
+                <img src="{{ asset('assets/images/insta-2.jpg') }}" alt="">
+                <img src="{{ asset('assets/images/insta-3.jpg') }}" alt="">
+                <img src="{{ asset('assets/images/insta-4.jpg') }}" alt="">
+            </div>
+        </div>
+
+    </div>
+</footer>
