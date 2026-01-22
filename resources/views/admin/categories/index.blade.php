@@ -1,4 +1,4 @@
-<!-- @extends('admin.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="p-6">
@@ -42,11 +42,4 @@
         </tbody>
     </table>
 </div>
-@endsection -->
-
-
-@extends('admin.layouts.app')
-
-@section('content')
-    <h1>Categories works ✅</h1>
 @endsection
