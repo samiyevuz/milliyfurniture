@@ -30,6 +30,7 @@
 
 
 
+
 <section class="features-section">
     <div class="features-container">
 
@@ -66,3 +67,31 @@
     </div>
 </section>
 
+
+
+
+{{-- INSPIRATION COLLECTION --}}
+<section class="inspiration-section">
+    <div class="inspiration-container">
+
+        <div class="inspiration-header">
+            <h2>Inspiration Collection</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="inspiration-grid">
+            <div class="inspiration-card">
+                <img src="{{ asset('assets/images/inspire-1.png') }}">
+            </div>
+
+            <div class="inspiration-card">
+                <img src="{{ asset('assets/images/inspire-2.png') }}">
+            </div>
+
+            <div class="inspiration-card">
+                <img src="{{ asset('assets/images/inspire-3.png') }}">
+            </div>
+        </div>
+
+    </div>
+</section>
