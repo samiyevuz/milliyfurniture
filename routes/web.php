@@ -14,15 +14,6 @@ Route::prefix('admin')->group(function () {
 
 
 use App\Http\Controllers\Admin\CategoryController;
-
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/categories', [CategoryController::class, 'index'])
-        ->name('categories.index');
-});
-
-use App\Http\Controllers\Admin\CategoryControllerV2;
-
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/categories', [CategoryControllerV2::class, 'index'])
-        ->name('categories.index');
+    Route::resource('categories', CategoryController::class);
 });
