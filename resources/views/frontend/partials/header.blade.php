@@ -9,9 +9,8 @@
         {{-- Desktop Menu --}}
         <nav class="hidden md:flex items-center space-x-10 text-gray-600 font-medium">
             <a href="#" class="hover:text-[#0A4C8A] transition">Home</a>
-            <a href="#" class="hover:text-[#0A4C8A] transition">Services</a>
-            <a href="#" class="hover:text-[#0A4C8A] transition">Products</a>
-            <a href="#" class="hover:text-[#0A4C8A] transition">Gallery</a>
+            <a href="#gallery" class="hover:text-[#0A4C8A] transition">Gallery</a>
+            <a href="#contact" class="hover:text-[#0A4C8A] transition">Contact</a>
         </nav>
 
         {{-- Mobile icon (keyin JS qilamiz) --}}
