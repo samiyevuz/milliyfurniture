@@ -688,3 +688,73 @@ html {
 .gallery-item:hover img {
     transform: scale(1.05);
 }
+
+
+
+
+/* =========================
+   GALLERY PAGE
+========================= */
+
+/* HERO */
+.gallery-hero {
+    background: #f5f7fb;
+    padding: 120px 0 80px;
+}
+
+.gallery-hero-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.gallery-hero-container h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 12px;
+}
+
+.gallery-hero-container p {
+    font-size: 15px;
+    color: #6b7280;
+}
+
+/* GRID */
+.gallery-page {
+    padding: 80px 0 120px;
+    background: #ffffff;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 16px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.gallery-item {
+    border-radius: 24px;
+    overflow: hidden;
+    background: #f5f7fb;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* HOVER */
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
