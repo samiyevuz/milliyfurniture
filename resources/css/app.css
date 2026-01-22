@@ -194,7 +194,7 @@
 ========================= */
 
 .beautify-section {
-    background: #f5f7fb;
+    background: #F2F5FF;
     padding: 100px 0;
 }
 
@@ -237,7 +237,7 @@
 }
 
 .beautify-image img {
-    width: 70%;
+    width: 80%;
     border-radius: 28px;
     position: relative;
     z-index: 2;
