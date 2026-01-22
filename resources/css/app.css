@@ -323,19 +323,19 @@
 ========================= */
 
 .how-section {
-    background: #f5f7fb;
-    padding: 100px 0;
+    background: #ffffff;
+    padding: 120px 0;
 }
 
 .how-container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 16px;
 }
 
 .how-header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
 }
 
 .how-header h2 {
@@ -350,12 +350,14 @@
     color: #6b7280;
 }
 
+/* GRID */
 .how-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 
+/* CARD */
 .how-card {
     text-align: center;
 }
@@ -364,24 +366,26 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 24px;
 }
 
 .how-image img {
     width: 100%;
+    height: 100%;
     display: block;
-    
+    object-fit: cover;
 }
 
+/* STEP CIRCLE */
 .how-step {
     position: absolute;
-    bottom: -18px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    background: #0a4c8a;
+    width: 44px;
+    height: 44px;
+    background: #000000;
     color: #ffffff;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 50%;
     display: flex;
@@ -389,8 +393,9 @@
     justify-content: center;
 }
 
+/* TEXT */
 .how-card h4 {
-    margin-top: 24px;
+    margin-top: 36px;
     font-size: 18px;
     font-weight: 600;
     color: #0a2540;
@@ -400,4 +405,6 @@
 .how-card p {
     font-size: 14px;
     color: #6b7280;
+    max-width: 260px;
+    margin: 0 auto;
 }
