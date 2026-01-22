@@ -179,6 +179,7 @@
 .inspiration-card {
     border-radius: 24px;
     overflow: hidden;
+    border-color: red;
 }
 
 .inspiration-card img {
