@@ -1,5 +1,8 @@
 <?php
 
+
+dd('CATEGORY CONTROLLER LOADED');
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
