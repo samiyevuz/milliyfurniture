@@ -245,9 +245,8 @@
 
             <span class="footer-label">Follow Us</span>
             <div class="footer-socials">
-                <a href="#">Fb</a>
-                <a href="#">Ig</a>
-                <a href="#">Tw</a>
+                <a href="#"><img src="{{ asset('assets/images/footer-insta.svg') }}" alt=""></a>
+                <a href="#"><img src="{{ asset('assets/images/footer-tg.svg') }}" alt=""></a>
             </div>
         </div>
 
