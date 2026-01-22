@@ -9,17 +9,20 @@ use Illuminate\Support\Str;
 
 class CategoryControllerV2 extends Controller
 {
+    // LIST
     public function index()
     {
         $categories = Category::latest()->get();
         return view('admin.categories.index', compact('categories'));
     }
 
+    // CREATE FORM
     public function create()
     {
         return view('admin.categories.create');
     }
 
+    // STORE
     public function store(Request $request)
     {
         $request->validate([
@@ -35,5 +38,38 @@ class CategoryControllerV2 extends Controller
         return redirect()
             ->route('admin.categories.index')
             ->with('success', 'Category created successfully');
+    }
+
+    // EDIT FORM
+    public function edit(Category $category)
+    {
+        return view('admin.categories.edit', compact('category'));
+    }
+
+    // UPDATE
+    public function update(Request $request, Category $category)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+        ]);
+
+        return redirect()
+            ->route('admin.categories.index')
+            ->with('success', 'Category updated successfully');
+    }
+
+    // DELETE
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return redirect()
+            ->route('admin.categories.index')
+            ->with('success', 'Category deleted successfully');
     }
 }

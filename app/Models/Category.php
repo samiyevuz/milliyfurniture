@@ -15,4 +15,8 @@ class Category extends Model
         'image',
         'status',
     ];
+
+    protected $casts = [
+        'status' => 'boolean',
+    ];
 }
