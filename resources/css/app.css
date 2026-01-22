@@ -241,14 +241,14 @@
     border-radius: 28px;
     position: relative;
     z-index: 2;
-    box-shadow: inset;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
 }
 
 /* green shape */
 .beautify-image::after {
     content: '';
     position: absolute;
-    right: -40px;
+    right: -15px;
     bottom: -10px;
     width: 280px;
     height: 280px;
