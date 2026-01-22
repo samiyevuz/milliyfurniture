@@ -375,7 +375,7 @@
 
 .how-step {
     position: absolute;
-    bottom: -1px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
