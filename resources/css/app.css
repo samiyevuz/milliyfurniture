@@ -365,6 +365,7 @@
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 24px;
+    z-index: 1;
 }
 
 .how-image img {
@@ -387,6 +388,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .how-card h4 {
