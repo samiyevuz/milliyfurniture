@@ -237,7 +237,7 @@
 }
 
 .beautify-image img {
-    width: 100%;
+    width: 50%;
     border-radius: 28px;
     position: relative;
     z-index: 2;
@@ -248,7 +248,7 @@
     content: '';
     position: absolute;
     right: -40px;
-    bottom: -40px;
+    bottom: -90px;
     width: 280px;
     height: 280px;
     background: #0a7c6a;
