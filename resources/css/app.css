@@ -248,7 +248,7 @@
 .beautify-image::after {
     content: '';
     position: absolute;
-    right: -80px;
+    right: -180px;
     bottom: -10px;
     width: 280px;
     height: 280px;
