@@ -565,3 +565,45 @@
     object-fit: cover;
     border-radius: 6px;
 }
+
+
+
+/* media */
+
+@media (max-width: 1024px) {
+    .hero-card {
+        right: 50%;
+        transform: translate(50%, -50%);
+        max-width: 480px;
+        padding: 40px;
+    }
+}
+@media (max-width: 640px) {
+    .hero-section {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .hero-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin: 24px auto 0;
+        max-width: 92%;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .hero-card h1 {
+        font-size: 28px;
+    }
+
+    .hero-card p {
+        font-size: 14px;
+    }
+
+    .hero-card a {
+        width: 100%;
+    }
+}
