@@ -401,3 +401,76 @@
     font-size: 14px;
     color: #6b7280;
 }
+
+
+
+
+/* =========================
+   JOIN OUR MAILING LIST
+========================= */
+
+.newsletter-section {
+    background: #f5f7fb;
+    padding: 120px 0;
+}
+
+.newsletter-container {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.newsletter-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 12px;
+}
+
+.newsletter-container p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* FORM */
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.newsletter-form input {
+    width: 100%;
+    max-width: 320px;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    outline: none;
+}
+
+.newsletter-form input:focus {
+    border-color: #0a4c8a;
+}
+
+.newsletter-form button {
+    height: 44px;
+    padding: 0 24px;
+    border-radius: 6px;
+    border: none;
+    background: #0a4c8a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    background: #083b6b;
+}

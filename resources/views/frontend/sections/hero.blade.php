@@ -199,3 +199,32 @@
 
     </div>
 </section>
+
+
+
+
+
+{{-- JOIN OUR MAILING LIST --}}
+<section class="newsletter-section">
+    <div class="newsletter-container">
+
+        <h2>Join Our Mailing List</h2>
+        <p>
+            Sign up to receive inspiration, product updates,<br>
+            and special offers from our team.
+        </p>
+
+        <form class="newsletter-form">
+            <input
+                type="email"
+                placeholder="example@gmail.com"
+                required
+            >
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+
+    </div>
+</section>
+
