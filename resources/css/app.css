@@ -261,64 +261,6 @@
 
 
 /* =========================
-   BROWSE THE RANGE
-========================= */
-
-.browse-section {
-    background: #ffffff;
-    padding: 100px 0;
-}
-
-.browse-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 16px;
-}
-
-.browse-header {
-    text-align: center;
-    margin-bottom: 56px;
-}
-
-.browse-header h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #0a2540;
-    margin-bottom: 12px;
-}
-
-.browse-header p {
-    font-size: 14px;
-    color: #6b7280;
-}
-
-.browse-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-}
-
-.browse-card {
-    text-align: center;
-}
-
-.browse-card img {
-    width: 100%;
-    border-radius: 24px;
-    margin-bottom: 20px;
-}
-
-.browse-card h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #0a2540;
-}
-
-
-
-
-
-/* =========================
    HOW IT WORKS
 ========================= */
 
@@ -329,7 +271,7 @@
 
 .how-container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 16px;
 }
 
@@ -342,21 +284,22 @@
     font-size: 32px;
     font-weight: 700;
     color: #0a2540;
-    margin-bottom: 12px;
 }
 
 .how-header p {
-    font-size: 14px;
+    margin-top: 12px;
     color: #6b7280;
 }
 
+/* GRID */
 .how-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 40px;
 }
 
-.how-card {
+/* ITEM */
+.how-item {
     text-align: center;
 }
 
@@ -364,40 +307,42 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 24px;
 }
 
 .how-image img {
     width: 100%;
+    height: 280px;
+    object-fit: cover;
     display: block;
 }
 
+/* NUMBER BADGE */
 .how-step {
     position: absolute;
-    bottom: -18px;
+    bottom: -22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     background: #0a4c8a;
-    color: #ffffff;
-    font-weight: 600;
+    color: #fff;
     border-radius: 50%;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.how-card h4 {
-    margin-top: 24px;
+.how-item h4 {
+    margin-top: 40px;
     font-size: 18px;
     font-weight: 600;
     color: #0a2540;
-    margin-bottom: 8px;
 }
 
-.how-card p {
+.how-item p {
+    margin-top: 8px;
     font-size: 14px;
     color: #6b7280;
 }
-
