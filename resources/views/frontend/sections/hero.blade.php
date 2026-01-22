@@ -119,3 +119,36 @@
 
     </div>
 </section>
+
+
+
+{{-- BROWSE THE RANGE --}}
+<section class="browse-section">
+    <div class="browse-container">
+
+        <div class="browse-header">
+            <h2>Browse The Range</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="browse-grid">
+
+            <div class="browse-card">
+                <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Dining">
+                <h4>Dining</h4>
+            </div>
+
+            <div class="browse-card">
+                <img src="{{ asset('assets/images/browse-living.png') }}" alt="Living">
+                <h4>Living</h4>
+            </div>
+
+            <div class="browse-card">
+                <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Bedroom">
+                <h4>Bedroom</h4>
+            </div>
+
+        </div>
+
+    </div>
+</section>
