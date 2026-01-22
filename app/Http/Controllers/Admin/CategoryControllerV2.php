@@ -3,11 +3,37 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryControllerV2 extends Controller
 {
     public function index()
     {
-        return 'CATEGORY CONTROLLER V2 WORKS';
+        $categories = Category::latest()->get();
+        return view('admin.categories.index', compact('categories'));
+    }
+
+    public function create()
+    {
+        return view('admin.categories.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        Category::create([
+            'name'   => $request->name,
+            'slug'   => Str::slug($request->name),
+            'status' => true,
+        ]);
+
+        return redirect()
+            ->route('admin.categories.index')
+            ->with('success', 'Category created successfully');
     }
 }

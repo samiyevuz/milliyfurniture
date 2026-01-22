@@ -18,4 +18,10 @@ use App\Http\Controllers\Admin\CategoryControllerV2;
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/categories', [CategoryControllerV2::class, 'index'])
         ->name('categories.index');
+
+    Route::get('/categories/create', [CategoryControllerV2::class, 'create'])
+        ->name('categories.create');
+
+    Route::post('/categories', [CategoryControllerV2::class, 'store'])
+        ->name('categories.store');
 });
