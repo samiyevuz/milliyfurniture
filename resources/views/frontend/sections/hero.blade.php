@@ -255,10 +255,10 @@
             <h4>Instagram Shop</h4>
 
             <div class="instagram-grid">
-                <img src="{{ asset('assets/images/insta-1.jpg') }}" alt="">
-                <img src="{{ asset('assets/images/insta-2.jpg') }}" alt="">
-                <img src="{{ asset('assets/images/insta-3.jpg') }}" alt="">
-                <img src="{{ asset('assets/images/insta-4.jpg') }}" alt="">
+                <img src="{{ asset('assets/images/insta-1.png') }}" alt="">
+                <img src="{{ asset('assets/images/insta-2.png') }}" alt="">
+                <img src="{{ asset('assets/images/insta-3.png') }}" alt="">
+                <img src="{{ asset('assets/images/insta-4.png') }}" alt="">
             </div>
         </div>
 
