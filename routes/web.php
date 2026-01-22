@@ -16,10 +16,6 @@ Route::prefix('admin')->group(function () {
 use App\Http\Controllers\Admin\CategoryController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
-
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
-
-    Route::resource('categories', CategoryController::class);
+    Route::get('/categories', [CategoryController::class, 'index'])
+        ->name('categories.index');
 });
