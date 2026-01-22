@@ -527,14 +527,11 @@
     font-size: 14px;
     text-decoration: none;
     opacity: 0.8;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 1px solid #ffffff;
     transition: all 0.3s ease;
 }
 
