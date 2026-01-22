@@ -11,3 +11,15 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.dashboard')->name('admin.dashboard');
 });
+
+
+use App\Http\Controllers\Admin\CategoryController;
+
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::resource('categories', CategoryController::class);
+});
