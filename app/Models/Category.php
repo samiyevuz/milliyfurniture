@@ -16,12 +16,8 @@ class Category extends Model
         'status',
     ];
 
-    protected $casts = [
-        'status' => 'boolean',
-    ];
-}
-
-public function products()
-{
-    return $this->hasMany(Product::class);
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
