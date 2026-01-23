@@ -22,7 +22,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 */
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    // ✅ DASHBOARD (FAQAT CONTROLLER ORQALI)
+    // ✅ DASHBOARD
     Route::get('/', [DashboardController::class, 'index'])
         ->name('dashboard');
 
