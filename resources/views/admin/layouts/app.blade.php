@@ -22,7 +22,7 @@
             <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
                 Dashboard
             </a>
-            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
+            <a href="{{ route('admin.categories.index') }}" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
                 Categories
             </a>
             <a href="#" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
