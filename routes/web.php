@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryControllerV2;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
 | Frontend routes
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
@@ -20,11 +20,11 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 | Admin routes
 |--------------------------------------------------------------------------
 */
-
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    // Dashboard
-    Route::view('/', 'admin.dashboard')->name('dashboard');
+    // ✅ DASHBOARD (FAQAT CONTROLLER ORQALI)
+    Route::get('/', [DashboardController::class, 'index'])
+        ->name('dashboard');
 
     /*
     |--------------------------------------------------------------------------
