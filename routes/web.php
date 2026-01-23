@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryControllerV2;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->name('categories.destroy');
 
     // Products CRUD
-    use App\Http\Controllers\Admin\ProductController;
 
     Route::prefix('admin')->name('admin.')->group(function () {
     
