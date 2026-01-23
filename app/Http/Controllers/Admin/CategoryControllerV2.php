@@ -9,20 +9,29 @@ use Illuminate\Support\Str;
 
 class CategoryControllerV2 extends Controller
 {
-    // LIST
+    /**
+     * LIST
+     */
     public function index()
     {
-        $categories = Category::latest()->get();
+        $categories = Category::withCount('products')
+            ->latest()
+            ->get();
+
         return view('admin.categories.index', compact('categories'));
     }
 
-    // CREATE FORM
+    /**
+     * CREATE FORM
+     */
     public function create()
     {
         return view('admin.categories.create');
     }
 
-    // STORE
+    /**
+     * STORE
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -32,7 +41,7 @@ class CategoryControllerV2 extends Controller
         Category::create([
             'name'   => $request->name,
             'slug'   => Str::slug($request->name),
-            'status' => true,
+            'status' => $request->status ?? 1,
         ]);
 
         return redirect()
@@ -40,13 +49,17 @@ class CategoryControllerV2 extends Controller
             ->with('success', 'Category created successfully');
     }
 
-    // EDIT FORM
+    /**
+     * EDIT FORM
+     */
     public function edit(Category $category)
     {
         return view('admin.categories.edit', compact('category'));
     }
 
-    // UPDATE
+    /**
+     * UPDATE
+     */
     public function update(Request $request, Category $category)
     {
         $request->validate([
@@ -54,8 +67,9 @@ class CategoryControllerV2 extends Controller
         ]);
 
         $category->update([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
+            'name'   => $request->name,
+            'slug'   => Str::slug($request->name),
+            'status' => $request->status ?? $category->status,
         ]);
 
         return redirect()
@@ -63,9 +77,18 @@ class CategoryControllerV2 extends Controller
             ->with('success', 'Category updated successfully');
     }
 
-    // DELETE
+    /**
+     * DELETE
+     */
     public function destroy(Category $category)
     {
+        // Agar category ichida product bo‘lsa — o‘chirmaymiz
+        if ($category->products()->count() > 0) {
+            return redirect()
+                ->route('admin.categories.index')
+                ->with('error', 'This category has products. Delete products first.');
+        }
+
         $category->delete();
 
         return redirect()
