@@ -26,7 +26,6 @@
         @forelse($categories as $category)
             <tr class="border-b hover:bg-gray-50">
                 <td class="p-4">{{ $category->id }}</td>
-
                 <td class="p-4">{{ $category->name }}</td>
 
                 <td class="p-4">
@@ -42,12 +41,12 @@
                 </td>
 
                 <td class="p-4 text-right space-x-3">
-                    <a href="{{ route('admin.categories.edit', $category->id) }}"
+                    <a href="{{ route('admin.categories.edit', $category) }}"
                        class="text-blue-600 hover:underline">
                         Edit
                     </a>
 
-                    <form action="{{ route('admin.categories.destroy', $category->id) }}"
+                    <form action="{{ route('admin.categories.destroy', $category) }}"
                           method="POST"
                           class="inline"
                           onsubmit="return confirm('Delete this category?')">
