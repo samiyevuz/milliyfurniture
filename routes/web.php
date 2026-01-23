@@ -24,8 +24,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::prefix('admin')->name('admin.')->group(function () {
 
     // Dashboard
-    Route::get('/admin', [DashboardController::class, 'index'])
-    ->name('admin.dashboard');
+    Route::view('/', 'admin.dashboard')->name('dashboard');
 
     /*
     |--------------------------------------------------------------------------
