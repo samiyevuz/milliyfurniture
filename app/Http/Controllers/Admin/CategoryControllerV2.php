@@ -41,7 +41,8 @@ class CategoryControllerV2 extends Controller
         Category::create([
             'name'   => $request->name,
             'slug'   => Str::slug($request->name),
-            'status' => $request->status ?? 1,
+            // 🔥 MUHIM JOY
+            'status' => $request->boolean('status'),
         ]);
 
         return redirect()
@@ -69,7 +70,8 @@ class CategoryControllerV2 extends Controller
         $category->update([
             'name'   => $request->name,
             'slug'   => Str::slug($request->name),
-            'status' => $request->status ?? $category->status,
+            // 🔥 MUHIM JOY
+            'status' => $request->boolean('status'),
         ]);
 
         return redirect()

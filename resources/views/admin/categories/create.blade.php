@@ -13,6 +13,11 @@
                    class="w-full border rounded px-4 py-2"
                    required>
         </div>
+        <div class="flex items-center gap-2">
+    <input type="checkbox" name="status" value="1" checked>
+    <label>Active</label>
+</div>
+
 
         <button class="bg-blue-600 text-white px-6 py-2 rounded">
             Save
