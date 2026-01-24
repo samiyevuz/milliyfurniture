@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\CategoryControllerV2;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\SettingController;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Frontend routes
@@ -55,4 +55,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::post('/settings', [SettingController::class, 'update'])
     ->name('admin.settings.update');
+
+
+/*
+| Contact CRUD
+*/
+Route::get('/contact', [ContactController::class, 'index'])
+    ->name('contact');
+
+
 });

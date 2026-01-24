@@ -16,9 +16,8 @@
         Gallery
     </a>
 
-    <a href="{{ route('contact') }}" class="hover:text-[#0A4C8A] transition">
-        Contact
-    </a>
+    <a href="#contact">Contact</a>
+
 </nav>
 
 
