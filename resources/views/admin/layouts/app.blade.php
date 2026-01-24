@@ -33,9 +33,7 @@
     Testimonials
 </a>
 
-            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
-                Gallery
-            </a>
+
             <a href="#" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
                 Settings
             </a>
