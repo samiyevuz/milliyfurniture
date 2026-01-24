@@ -40,29 +40,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     */
     Route::resource('products', ProductController::class)
         ->except(['show']);
+
+    /*
+    | Testimonials CRUD (Mijozlar fikri)
+    */
+    Route::resource('testimonials', TestimonialController::class)
+        ->except(['show']);
 });
-
-/*
-|--------------------------------------------------------------------------
-| Testimonials CRUD
-|--------------------------------------------------------------------------
-*/
-Route::get('/testimonials', [\App\Http\Controllers\Admin\TestimonialController::class, 'index'])
-    ->name('testimonials.index');
-
-Route::get('/testimonials/create', [\App\Http\Controllers\Admin\TestimonialController::class, 'create'])
-    ->name('testimonials.create');
-
-Route::post('/testimonials', [\App\Http\Controllers\Admin\TestimonialController::class, 'store'])
-    ->name('testimonials.store');
-
-Route::get('/testimonials/{testimonial}/edit', [\App\Http\Controllers\Admin\TestimonialController::class, 'edit'])
-    ->name('testimonials.edit');
-
-Route::put('/testimonials/{testimonial}', [\App\Http\Controllers\Admin\TestimonialController::class, 'update'])
-    ->name('testimonials.update');
-
-Route::delete('/testimonials/{testimonial}', [\App\Http\Controllers\Admin\TestimonialController::class, 'destroy'])
-    ->name('testimonials.destroy');
-
-
