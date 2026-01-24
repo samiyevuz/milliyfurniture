@@ -28,6 +28,11 @@
             <a href="{{ route('admin.products.index') }}" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
                 Products
             </a>
+            <a href="{{ route('admin.testimonials.index') }}"
+   class="block px-3 py-2 rounded hover:bg-gray-100">
+    Testimonials
+</a>
+
             <a href="#" class="block px-4 py-2 rounded-lg hover:bg-[#F5F7FB]">
                 Gallery
             </a>

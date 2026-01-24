@@ -47,20 +47,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
 | Testimonials CRUD
 |--------------------------------------------------------------------------
 */
-Route::get('/testimonials', [TestimonialController::class, 'index'])
+Route::get('/testimonials', [\App\Http\Controllers\Admin\TestimonialController::class, 'index'])
     ->name('testimonials.index');
 
-Route::get('/testimonials/create', [TestimonialController::class, 'create'])
+Route::get('/testimonials/create', [\App\Http\Controllers\Admin\TestimonialController::class, 'create'])
     ->name('testimonials.create');
 
-Route::post('/testimonials', [TestimonialController::class, 'store'])
+Route::post('/testimonials', [\App\Http\Controllers\Admin\TestimonialController::class, 'store'])
     ->name('testimonials.store');
 
-Route::get('/testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])
+Route::get('/testimonials/{testimonial}/edit', [\App\Http\Controllers\Admin\TestimonialController::class, 'edit'])
     ->name('testimonials.edit');
 
-Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])
+Route::put('/testimonials/{testimonial}', [\App\Http\Controllers\Admin\TestimonialController::class, 'update'])
     ->name('testimonials.update');
 
-Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])
+Route::delete('/testimonials/{testimonial}', [\App\Http\Controllers\Admin\TestimonialController::class, 'destroy'])
     ->name('testimonials.destroy');
