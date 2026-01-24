@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\ContactController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Frontend routes
