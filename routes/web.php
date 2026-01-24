@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryControllerV2;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,4 +47,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     */
     Route::resource('testimonials', TestimonialController::class)
         ->except(['show']);
+
+    /* Settings CRUD */
+    
+    Route::get('/settings', [SettingController::class, 'edit'])
+        ->name('settings.edit');
+
+    Route::put('/settings', [SettingController::class, 'update'])
+        ->name('settings.update');
 });
