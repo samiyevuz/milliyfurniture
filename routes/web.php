@@ -64,3 +64,5 @@ Route::put('/testimonials/{testimonial}', [\App\Http\Controllers\Admin\Testimoni
 
 Route::delete('/testimonials/{testimonial}', [\App\Http\Controllers\Admin\TestimonialController::class, 'destroy'])
     ->name('testimonials.destroy');
+
+
