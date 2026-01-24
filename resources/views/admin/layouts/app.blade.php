@@ -33,10 +33,10 @@
         Testimonials
     </a>
 
-        <a href="{{ route('admin.settings.edit') }}"
-        class="block px-3 py-2 rounded hover:bg-gray-100">
-        Settings
-        </a>
+<a href="{{ route('admin.settings.index') }}"
+   class="block px-3 py-2 rounded hover:bg-gray-100">
+    Settings
+</a>
 
         </nav>
     </aside>

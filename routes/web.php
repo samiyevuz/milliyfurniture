@@ -50,6 +50,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     /* Settings CRUD */
     
-    Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
-    Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
+    Route::get('/settings', [SettingController::class, 'index'])
+    ->name('admin.settings.index');
+
+Route::post('/settings', [SettingController::class, 'update'])
+    ->name('admin.settings.update');
 });
