@@ -19,7 +19,7 @@
 
         <div class="gallery-grid">
             @forelse($categories as $category)
-                <div class="gallery-item">
+                <a href="{{ route('category.products', $category->slug) }}" class="gallery-item">
                     @if($category->image)
                         <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" loading="lazy">
                     @else
@@ -29,7 +29,7 @@
                         <h3>{{ $category->name }}</h3>
                         <p>{{ $category->products_count ?? 0 }} products</p>
                     </div>
-                </div>
+                </a>
             @empty
                 <div class="gallery-item">
                     <img src="{{ asset('assets/images/gallery-1.png') }}" alt="Category" loading="lazy">

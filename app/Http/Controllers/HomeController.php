@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Testimonial;
 use Illuminate\Contracts\View\View;
 
@@ -14,6 +15,7 @@ class HomeController extends Controller
     public function index(): View
     {
         $categories = Category::active()
+            ->withCount('products')
             ->latest()
             ->take(6)
             ->get();
@@ -31,10 +33,24 @@ class HomeController extends Controller
     public function gallery(): View
     {
         $categories = Category::active()
+            ->withCount('products')
             ->latest()
             ->get();
 
         return view('frontend.gallery', compact('categories'));
+    }
+
+    /**
+     * Display products in a category.
+     */
+    public function categoryProducts(Category $category): View
+    {
+        $products = Product::where('category_id', $category->id)
+            ->active()
+            ->latest()
+            ->paginate(12);
+
+        return view('frontend.category-products', compact('category', 'products'));
     }
 
     /**
