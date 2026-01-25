@@ -2,19 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
+
 class HomeController extends Controller
 {
-    public function index()
+    /**
+     * Display the home page.
+     */
+    public function index(): View
     {
         return view('frontend.home');
     }
 
-    public function gallery()
+    /**
+     * Display the gallery page.
+     */
+    public function gallery(): View
     {
         return view('frontend.gallery');
     }
 
-    public function contact()
+    /**
+     * Display the contact page.
+     */
+    public function contact(): View
     {
         return view('frontend.contact');
     }

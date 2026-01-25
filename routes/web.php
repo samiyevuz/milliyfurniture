@@ -9,10 +9,9 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\ContactController;
 
-
 /*
 |--------------------------------------------------------------------------
-| Frontend routes
+| Frontend Routes
 |--------------------------------------------------------------------------
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -21,11 +20,10 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 /*
 |--------------------------------------------------------------------------
-| Admin routes
+| Admin Routes
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->name('admin.')->group(function () {
-
     /*
     | Dashboard
     */
@@ -45,25 +43,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->except(['show']);
 
     /*
-    | Testimonials CRUD (Mijozlar fikri)
+    | Testimonials CRUD
     */
     Route::resource('testimonials', TestimonialController::class)
         ->except(['show']);
 
-    /* Settings CRUD */
-    
+    /*
+    | Settings
+    */
     Route::get('/settings', [SettingController::class, 'index'])
-    ->name('admin.settings.index');
+        ->name('settings.index');
+    Route::post('/settings', [SettingController::class, 'update'])
+        ->name('settings.update');
 
-Route::post('/settings', [SettingController::class, 'update'])
-    ->name('admin.settings.update');
-
-
-/*
-| Contact CRUD
-*/
-Route::get('/contact', [ContactController::class, 'index'])
-    ->name('contact');
-
-
+    /*
+    | Contact Management
+    */
+    Route::get('/contact', [ContactController::class, 'index'])
+        ->name('contact');
 });

@@ -36,7 +36,7 @@
 
         <div class="feature-item">
             <div class="feature-icon">
-                <img src="{{ asset('assets/icons/delivery.svg') }}" alt="">
+                <img src="{{ asset('assets/icons/delivery.svg') }}" alt="Free Delivery" loading="lazy">
             </div>
             <div class="feature-text">
                 <h4>Free Delivery</h4>
@@ -46,7 +46,7 @@
 
         <div class="feature-item">
             <div class="feature-icon">
-                <img src="{{ asset('assets/icons/support.svg') }}" alt="">
+                <img src="{{ asset('assets/icons/support.svg') }}" alt="Support 24/7" loading="lazy">
             </div>
             <div class="feature-text">
                 <h4>Support 24/7</h4>
@@ -56,7 +56,7 @@
 
         <div class="feature-item">
             <div class="feature-icon">
-                <img src="{{ asset('assets/icons/shield.svg') }}" alt="">
+                <img src="{{ asset('assets/icons/shield.svg') }}" alt="100% Authentic" loading="lazy">
             </div>
             <div class="feature-text">
                 <h4>100% Authentic</h4>
@@ -81,15 +81,15 @@
 
         <div class="inspiration-grid">
             <div class="inspiration-card">
-                <img src="{{ asset('assets/images/inspire-1.png') }}">
+                <img src="{{ asset('assets/images/inspire-1.png') }}" alt="Inspiration Collection 1" loading="lazy">
             </div>
 
             <div class="inspiration-card">
-                <img src="{{ asset('assets/images/inspire-2.png') }}">
+                <img src="{{ asset('assets/images/inspire-2.png') }}" alt="Inspiration Collection 2" loading="lazy">
             </div>
 
             <div class="inspiration-card">
-                <img src="{{ asset('assets/images/inspire-3.png') }}">
+                <img src="{{ asset('assets/images/inspire-3.png') }}" alt="Inspiration Collection 3" loading="lazy">
             </div>
         </div>
 
@@ -114,7 +114,7 @@
         </div>
 
         <div class="beautify-image">
-            <img src="{{ asset('assets/images/beautify.png') }}" alt="Beautify">
+            <img src="{{ asset('assets/images/beautify.png') }}" alt="Beautify Your Space" loading="lazy">
         </div>
 
     </div>
@@ -134,17 +134,17 @@
         <div class="browse-grid">
 
             <div class="browse-card">
-                <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Dining">
+                <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Dining" loading="lazy">
                 <h4>Dining</h4>
             </div>
 
             <div class="browse-card">
-                <img src="{{ asset('assets/images/browse-living.png') }}" alt="Living">
+                <img src="{{ asset('assets/images/browse-living.png') }}" alt="Living" loading="lazy">
                 <h4>Living</h4>
             </div>
 
             <div class="browse-card">
-                <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Bedroom">
+                <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Bedroom" loading="lazy">
                 <h4>Bedroom</h4>
             </div>
 
@@ -170,7 +170,7 @@
 
             <div class="how-card">
                 <div class="how-image">
-                    <img src="{{ asset('assets/images/how-1.png') }}" alt="">
+                    <img src="{{ asset('assets/images/how-1.png') }}" alt="Purchase Securely" loading="lazy">
                     <span class="how-step">1</span>
                 </div>
                 <h4>Purchase Securely</h4>
@@ -179,7 +179,7 @@
 
             <div class="how-card">
                 <div class="how-image">
-                    <img src="{{ asset('assets/images/how-2.png') }}" alt="">
+                    <img src="{{ asset('assets/images/how-2.png') }}" alt="Ships From Warehouse" loading="lazy">
                     <span class="how-step">2</span>
                 </div>
                 <h4>Ships From Warehouse</h4>
@@ -188,7 +188,7 @@
 
             <div class="how-card">
                 <div class="how-image">
-                    <img src="{{ asset('assets/images/how-3.png') }}" alt="">
+                    <img src="{{ asset('assets/images/how-3.png') }}" alt="Style Your Room" loading="lazy">
                     <span class="how-step">3</span>
                 </div>
                 <h4>Style Your Room</h4>
@@ -245,8 +245,8 @@
 
             <span class="footer-label">Follow Us</span>
             <div class="footer-socials">
-                <a href="#"><img src="{{ asset('assets/images/footer-insta.svg') }}" alt=""></a>
-                <a href="#"><img src="{{ asset('assets/images/footer-tg.svg') }}" alt=""></a>
+                <a href="#" aria-label="Instagram"><img src="{{ asset('assets/images/footer-insta.svg') }}" alt="Instagram" loading="lazy"></a>
+                <a href="#" aria-label="Telegram"><img src="{{ asset('assets/images/footer-tg.svg') }}" alt="Telegram" loading="lazy"></a>
             </div>
         </div>
 
@@ -255,10 +255,10 @@
             <h4>Instagram Shop</h4>
 
             <div class="instagram-grid">
-                <img src="{{ asset('assets/images/insta-1.png') }}" alt="">
-                <img src="{{ asset('assets/images/insta-2.png') }}" alt="">
-                <img src="{{ asset('assets/images/insta-3.png') }}" alt="">
-                <img src="{{ asset('assets/images/insta-4.png') }}" alt="">
+                <img src="{{ asset('assets/images/insta-1.png') }}" alt="Instagram Gallery 1" loading="lazy">
+                <img src="{{ asset('assets/images/insta-2.png') }}" alt="Instagram Gallery 2" loading="lazy">
+                <img src="{{ asset('assets/images/insta-3.png') }}" alt="Instagram Gallery 3" loading="lazy">
+                <img src="{{ asset('assets/images/insta-4.png') }}" alt="Instagram Gallery 4" loading="lazy">
             </div>
         </div>
 

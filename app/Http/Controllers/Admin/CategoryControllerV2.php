@@ -4,45 +4,47 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 
 class CategoryControllerV2 extends Controller
 {
     /**
-     * LIST
+     * Display a listing of the categories.
      */
-    public function index()
+    public function index(): View
     {
         $categories = Category::withCount('products')
             ->latest()
-            ->get();
+            ->paginate(15);
 
         return view('admin.categories.index', compact('categories'));
     }
 
     /**
-     * CREATE FORM
+     * Show the form for creating a new category.
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.categories.create');
     }
 
     /**
-     * STORE
+     * Store a newly created category in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name',
+            'status' => 'sometimes|boolean',
         ]);
 
         Category::create([
-            'name'   => $request->name,
-            'slug'   => Str::slug($request->name),
-            // 🔥 MUHIM JOY
-            'status' => $request->boolean('status'),
+            'name' => $validated['name'],
+            'slug' => Str::slug($validated['name']),
+            'status' => $request->boolean('status', true),
         ]);
 
         return redirect()
@@ -51,27 +53,27 @@ class CategoryControllerV2 extends Controller
     }
 
     /**
-     * EDIT FORM
+     * Show the form for editing the specified category.
      */
-    public function edit(Category $category)
+    public function edit(Category $category): View
     {
         return view('admin.categories.edit', compact('category'));
     }
 
     /**
-     * UPDATE
+     * Update the specified category in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
+            'status' => 'sometimes|boolean',
         ]);
 
         $category->update([
-            'name'   => $request->name,
-            'slug'   => Str::slug($request->name),
-            // 🔥 MUHIM JOY
-            'status' => $request->boolean('status'),
+            'name' => $validated['name'],
+            'slug' => Str::slug($validated['name']),
+            'status' => $request->boolean('status', $category->status),
         ]);
 
         return redirect()
@@ -80,12 +82,11 @@ class CategoryControllerV2 extends Controller
     }
 
     /**
-     * DELETE
+     * Remove the specified category from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category): RedirectResponse
     {
-        // Agar category ichida product bo‘lsa — o‘chirmaymiz
-        if ($category->products()->count() > 0) {
+        if ($category->products()->exists()) {
             return redirect()
                 ->route('admin.categories.index')
                 ->with('error', 'This category has products. Delete products first.');
