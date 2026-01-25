@@ -14,7 +14,7 @@ return new class extends Migration
     {
         // First, check if 'text' column exists and rename it to 'description'
         if (Schema::hasColumn('testimonials', 'text') && !Schema::hasColumn('testimonials', 'description')) {
-            DB::statement('ALTER TABLE testimonials CHANGE COLUMN text description TEXT NOT NULL DEFAULT ""');
+            DB::statement('ALTER TABLE testimonials CHANGE COLUMN text description TEXT NOT NULL');
         }
         
         // If 'text' exists but 'description' also exists, drop 'text'
@@ -57,8 +57,9 @@ return new class extends Migration
             DB::statement('ALTER TABLE testimonials MODIFY COLUMN title VARCHAR(255) NOT NULL DEFAULT ""');
         }
         
+        // TEXT columns can't have DEFAULT in MySQL, so we just ensure it's NOT NULL
         if (Schema::hasColumn('testimonials', 'description')) {
-            DB::statement('ALTER TABLE testimonials MODIFY COLUMN description TEXT NOT NULL DEFAULT ""');
+            DB::statement('ALTER TABLE testimonials MODIFY COLUMN description TEXT NOT NULL');
         }
         
         if (Schema::hasColumn('testimonials', 'step_number')) {

@@ -40,17 +40,19 @@ class TestimonialController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'step_number' => 'required|integer|min:1|max:10',
             'status' => 'sometimes|boolean',
-            'order' => 'nullable|integer|min:0',
         ]);
+
+        // Get the next step number and order automatically
+        $maxStepNumber = Testimonial::max('step_number') ?? 0;
+        $maxOrder = Testimonial::max('order') ?? 0;
 
         $data = [
             'title' => $validated['title'],
             'description' => $validated['description'],
-            'step_number' => $validated['step_number'],
+            'step_number' => $maxStepNumber + 1,
             'status' => $request->boolean('status', true),
-            'order' => $validated['order'] ?? 0,
+            'order' => $maxOrder + 1,
         ];
 
         if ($request->hasFile('image')) {
