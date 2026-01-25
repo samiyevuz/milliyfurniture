@@ -9,9 +9,6 @@ use Illuminate\Contracts\View\View;
 
 class DashboardController extends Controller
 {
-    /**
-     * Display the admin dashboard.
-     */
     public function index(): View
     {
         $categoriesCount = Category::count();
