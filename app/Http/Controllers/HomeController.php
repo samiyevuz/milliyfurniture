@@ -60,4 +60,20 @@ class HomeController extends Controller
     {
         return view('frontend.contact');
     }
+
+    /**
+     * Display product details.
+     */
+    public function showProduct(Product $product): View
+    {
+        // Get related products from the same category
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->active()
+            ->latest()
+            ->take(4)
+            ->get();
+
+        return view('frontend.product-detail', compact('product', 'relatedProducts'));
+    }
 }

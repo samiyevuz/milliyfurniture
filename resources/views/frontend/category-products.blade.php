@@ -19,7 +19,7 @@
         @if($products->count() > 0)
             <div class="products-grid">
                 @foreach($products as $product)
-                    <div class="product-card">
+                    <a href="{{ route('product.show', $product) }}" class="product-card" style="text-decoration: none; color: inherit;">
                         @if($product->image)
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" loading="lazy">
                         @else
@@ -29,7 +29,7 @@
                             <h3>{{ $product->name }}</h3>
                             <p class="product-price">{{ number_format($product->price, 0, '.', ' ') }} UZS</p>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
 

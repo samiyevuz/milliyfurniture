@@ -18,6 +18,7 @@ use App\Http\Controllers\ContactController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/category/{category:slug}', [HomeController::class, 'categoryProducts'])->name('category.products');
+Route::get('/product/{product:slug}', [HomeController::class, 'showProduct'])->name('product.show');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 /*
