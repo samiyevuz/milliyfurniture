@@ -77,23 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Function to go to next slide (no looping - stops at the end)
+        // Function to go to next slide (infinite loop)
         function nextSlide() {
-            if (currentIndex < items.length - 1) {
-                currentIndex++;
-                showSlide(currentIndex);
-            } else {
-                // At the end, stop auto-slide
-                stopAutoSlide();
-            }
+            currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
         }
 
-        // Function to go to previous slide (no looping - stops at the beginning)
+        // Function to go to previous slide (infinite loop)
         function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                showSlide(currentIndex);
-            }
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showSlide(currentIndex);
         }
 
         // Auto-slide every 2 seconds
