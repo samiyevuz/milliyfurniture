@@ -29,16 +29,16 @@
             <tbody class="bg-white divide-y divide-gray-200">
             @forelse($testimonials as $testimonial)
                 <tr class="hover:bg-gray-50 transition">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $testimonial->id }}</td>
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900">{{ $testimonial->title }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $testimonial->id ?? '-' }}</td>
+                    <td class="px-6 py-4 text-sm font-medium text-gray-900">{{ $testimonial->title ?? 'Untitled' }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                         <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                            {{ $testimonial->step_number }}
+                            {{ $testimonial->step_number ?? 1 }}
                         </span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{{ $testimonial->order ?? 0 }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm">
-                        @if($testimonial->status)
+                        @if($testimonial->status ?? false)
                             <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Active</span>
                         @else
                             <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Inactive</span>
