@@ -199,7 +199,6 @@
                                     @else
                                         <img src="{{ asset('assets/images/how-1.png') }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
                                     @endif
-                                    <span class="how-step">{{ $testimonial->step_number ?? 1 }}</span>
                                 </div>
                                 <h4>{{ $testimonial->title ?? 'Untitled' }}</h4>
                                 <p>{{ $testimonial->description ?? '' }}</p>
@@ -223,7 +222,6 @@
                 <div class="how-card">
                     <div class="how-image">
                         <img src="{{ asset('assets/images/how-1.png') }}" alt="Purchase Securely" loading="lazy">
-                        <span class="how-step">1</span>
                     </div>
                     <h4>Purchase Securely</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -232,7 +230,6 @@
                 <div class="how-card">
                     <div class="how-image">
                         <img src="{{ asset('assets/images/how-2.png') }}" alt="Ships From Warehouse" loading="lazy">
-                        <span class="how-step">2</span>
                     </div>
                     <h4>Ships From Warehouse</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -241,7 +238,6 @@
                 <div class="how-card">
                     <div class="how-image">
                         <img src="{{ asset('assets/images/how-3.png') }}" alt="Style Your Room" loading="lazy">
-                        <span class="how-step">3</span>
                     </div>
                     <h4>Style Your Room</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

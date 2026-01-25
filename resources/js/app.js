@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function showSlide(index) {
             if (items.length === 0) return;
             
-            // Clamp index to valid range
+            // Clamp index to valid range (no looping)
             currentIndex = Math.max(0, Math.min(index, items.length - 1));
             
             // Calculate transform
@@ -77,16 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Function to go to next slide
+        // Function to go to next slide (no looping - stops at the end)
         function nextSlide() {
-            currentIndex = (currentIndex + 1) % items.length;
-            showSlide(currentIndex);
+            if (currentIndex < items.length - 1) {
+                currentIndex++;
+                showSlide(currentIndex);
+            } else {
+                // At the end, stop auto-slide
+                stopAutoSlide();
+            }
         }
 
-        // Function to go to previous slide
+        // Function to go to previous slide (no looping - stops at the beginning)
         function prevSlide() {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            showSlide(currentIndex);
+            if (currentIndex > 0) {
+                currentIndex--;
+                showSlide(currentIndex);
+            }
         }
 
         // Auto-slide every 2 seconds
