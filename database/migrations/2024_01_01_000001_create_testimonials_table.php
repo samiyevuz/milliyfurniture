@@ -23,6 +23,13 @@ return new class extends Migration
                 $table->integer('order')->default(0);
                 $table->timestamps();
             });
+        } else {
+            // If table exists, check and add missing columns
+            Schema::table('testimonials', function (Blueprint $table) {
+                if (!Schema::hasColumn('testimonials', 'order')) {
+                    $table->integer('order')->default(0)->after('status');
+                }
+            });
         }
     }
 
