@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 
-@section('page-title', 'Settings')
+@section('page-title', 'Sozlamalar')
 
 @section('content')
 <div class="max-w-4xl">
-    <h1 class="text-2xl font-semibold text-gray-900 mb-6">Settings</h1>
+    <h1 class="text-2xl font-semibold text-gray-900 mb-6">Sozlamalar</h1>
 
     <form method="POST" action="{{ route('admin.settings.update') }}" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         @csrf
@@ -12,12 +12,12 @@
         <div class="space-y-6">
             {{-- Contact Information --}}
             <div>
-                <h2 class="text-lg font-semibold text-gray-900 mb-4">Contact Information</h2>
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Aloqa ma'lumotlari</h2>
                 
                 <div class="space-y-4">
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-                            Phone
+                            Telefon
                         </label>
                         <input type="text"
                                id="phone"
@@ -32,7 +32,7 @@
 
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                            Email
+                            Elektron pochta
                         </label>
                         <input type="email"
                                id="email"
@@ -47,13 +47,13 @@
 
                     <div>
                         <label for="address" class="block text-sm font-medium text-gray-700 mb-2">
-                            Address
+                            Manzil
                         </label>
                         <textarea id="address"
                                   name="address"
                                   rows="2"
                                   class="w-full px-4 py-2.5 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0A4C8A] focus:border-[#0A4C8A] outline-none transition"
-                                  placeholder="Your address">{{ old('address', $setting->address ?? '') }}</textarea>
+                                  placeholder="Manzilingiz">{{ old('address', $setting->address ?? '') }}</textarea>
                         @error('address')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
@@ -63,7 +63,7 @@
 
             {{-- Social Media --}}
             <div>
-                <h2 class="text-lg font-semibold text-gray-900 mb-4">Social Media</h2>
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Ijtimoiy tarmoqlar</h2>
                 
                 <div class="space-y-4">
                     <div>
@@ -100,18 +100,18 @@
 
             {{-- Working Hours --}}
             <div>
-                <h2 class="text-lg font-semibold text-gray-900 mb-4">Working Hours</h2>
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Ish vaqti</h2>
                 
                 <div class="space-y-3">
                     @php
                         $days = [
-                            'mon' => 'Monday',
-                            'tue' => 'Tuesday',
-                            'wed' => 'Wednesday',
-                            'thu' => 'Thursday',
-                            'fri' => 'Friday',
-                            'sat' => 'Saturday',
-                            'sun' => 'Sunday',
+                            'mon' => 'Dushanba',
+                            'tue' => 'Seshanba',
+                            'wed' => 'Chorshanba',
+                            'thu' => 'Payshanba',
+                            'fri' => 'Juma',
+                            'sat' => 'Shanba',
+                            'sun' => 'Yakshanba',
                         ];
                         $workDays = $setting->work_days ?? [];
                     @endphp
@@ -133,7 +133,7 @@
                                        value="{{ old("work_days.{$key}.to", $workDays[$key]['to'] ?? '') }}"
                                        class="w-24 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-[#0A4C8A] focus:border-[#0A4C8A] outline-none transition"
                                        placeholder="18:00">
-                                <span class="text-xs text-gray-500">(Leave empty for closed)</span>
+                                <span class="text-xs text-gray-500">(Yopiq uchun bo'sh qoldiring)</span>
                             </div>
                         </div>
                     @endforeach
@@ -144,7 +144,7 @@
         <div class="mt-8 flex items-center space-x-4">
             <button type="submit"
                     class="bg-[#0A4C8A] text-white px-6 py-2.5 rounded-lg hover:bg-[#083b6b] transition font-medium">
-                Save Settings
+                Saqlash
             </button>
         </div>
     </form>

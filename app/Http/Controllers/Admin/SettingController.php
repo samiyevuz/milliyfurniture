@@ -59,6 +59,6 @@ class SettingController extends Controller
 
         return redirect()
             ->route('admin.settings.index')
-            ->with('success', 'Settings updated successfully');
+            ->with('success', 'Sozlamalar muvaffaqiyatli yangilandi.');
     }
 }

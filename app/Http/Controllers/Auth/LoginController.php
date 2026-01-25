@@ -38,13 +38,13 @@ class LoginController extends Controller
             $request->session()->regenerateToken();
 
             return redirect()->intended(route('admin.dashboard'))
-                ->with('success', 'Welcome back!');
+                ->with('success', 'Xush kelibsiz!');
         }
 
         return back()
             ->withInput($request->only('email'))
             ->withErrors([
-                'email' => 'The provided credentials do not match our records.',
+                    'email' => 'Kiritilgan ma\'lumotlar bizning yozuvlarimizga mos kelmaydi.',
             ]);
     }
 
@@ -59,6 +59,6 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('admin.login')
-            ->with('success', 'You have been logged out successfully.');
+            ->with('success', 'Siz muvaffaqiyatli chiqdingiz.');
     }
 }

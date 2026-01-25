@@ -3,21 +3,21 @@
 
         {{-- Logo --}}
         <a href="{{ route('home') }}" class="text-2xl font-semibold text-[#0A2540]">
-            Furniture
+            Milliy Mebel
         </a>
 
         {{-- Desktop Menu --}}
         <nav class="hidden md:flex items-center space-x-10 text-gray-600 font-medium">
             <a href="{{ route('home') }}" class="hover:text-[#0A4C8A] transition">
-                Home
+                Bosh sahifa
             </a>
 
             <a href="{{ route('gallery') }}" class="hover:text-[#0A4C8A] transition">
-                Category
+                Kategoriyalar
             </a>
 
             <a href="{{ route('contact') }}" class="hover:text-[#0A4C8A] transition">
-                Contact
+                Aloqa
             </a>
         </nav>
 

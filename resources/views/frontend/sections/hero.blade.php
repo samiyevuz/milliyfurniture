@@ -169,20 +169,20 @@
     <div class="how-container">
 
         <div class="how-header">
-            <h2>How It Works</h2>
-            <p>Explore our process and see how we deliver quality furniture to your home.</p>
+            <h2>Qanday Ishlaydi</h2>
+            <p>Bizning jarayonimizni o'rganing va sifatli mebellarni uyingizga qanday yetkazib berayotganimizni ko'ring.</p>
         </div>
 
         @if($testimonials->count() > 0)
             <div class="how-carousel-wrapper">
                 {{-- Navigation Arrows --}}
                 @if($testimonials->count() > 1)
-                    <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Previous slide">
+                    <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Oldingi slayd">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M15 18l-6-6 6-6"/>
                         </svg>
                     </button>
-                    <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Next slide">
+                    <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Keyingi slayd">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 18l6-6-6-6"/>
                         </svg>
@@ -211,7 +211,7 @@
                 @if($testimonials->count() > 1)
                     <div class="how-carousel-dots">
                         @foreach($testimonials as $index => $testimonial)
-                            <button class="carousel-dot {{ $index === 0 ? 'active' : '' }}" data-index="{{ $index }}" aria-label="Go to slide {{ $index + 1 }}"></button>
+                            <button class="carousel-dot {{ $index === 0 ? 'active' : '' }}" data-index="{{ $index }}" aria-label="{{ $index + 1 }}-slaydga o'tish"></button>
                         @endforeach
                     </div>
                 @endif
@@ -223,24 +223,24 @@
                     <div class="how-image">
                         <img src="{{ asset('assets/images/how-1.png') }}" alt="Purchase Securely" loading="lazy">
                     </div>
-                    <h4>Purchase Securely</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Xavfsiz Xarid</h4>
+                    <p>Bizning mebellarimiz yuqori sifatli materiallardan tayyorlanadi.</p>
                 </div>
 
                 <div class="how-card">
                     <div class="how-image">
-                        <img src="{{ asset('assets/images/how-2.png') }}" alt="Ships From Warehouse" loading="lazy">
+                        <img src="{{ asset('assets/images/how-2.png') }}" alt="Omborxona" loading="lazy">
                     </div>
-                    <h4>Ships From Warehouse</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Omborxonadan Yetkazib Berish</h4>
+                    <p>Barcha mebellarimiz omborxonamizdan tezkor yetkazib beriladi.</p>
                 </div>
 
                 <div class="how-card">
                     <div class="how-image">
-                        <img src="{{ asset('assets/images/how-3.png') }}" alt="Style Your Room" loading="lazy">
+                        <img src="{{ asset('assets/images/how-3.png') }}" alt="Xonani Bezash" loading="lazy">
                     </div>
-                    <h4>Style Your Room</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Xonangizni Bezang</h4>
+                    <p>Bizning mebellarimiz bilan xonangizni zamonaviy va qulay qiling.</p>
                 </div>
             </div>
         @endif

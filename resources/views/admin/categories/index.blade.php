@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="flex justify-between items-center mb-6">
-    <h1 class="text-2xl font-semibold">Categories</h1>
+    <h1 class="text-2xl font-semibold">Kategoriyalar</h1>
 
     <a href="{{ route('admin.categories.create') }}"
        class="bg-blue-600 text-white px-4 py-2 rounded">
-        + Add Category
+        + Kategoriya qo'shish
     </a>
 </div>
 
@@ -15,10 +15,10 @@
         <thead class="border-b bg-gray-50">
             <tr>
                 <th class="p-4">#</th>
-                <th class="p-4">Name</th>
-                <th class="p-4">Status</th>
-                <th class="p-4">Products count</th>
-                <th class="p-4 text-right">Actions</th>
+                <th class="p-4">Nomi</th>
+                <th class="p-4">Holati</th>
+                <th class="p-4">Mahsulotlar soni</th>
+                <th class="p-4 text-right">Amallar</th>
             </tr>
         </thead>
 
@@ -30,9 +30,9 @@
 
                 <td class="p-4">
                     @if($category->status)
-                        <span class="text-green-600 font-medium">Active</span>
+                        <span class="text-green-600 font-medium">Faol</span>
                     @else
-                        <span class="text-red-600 font-medium">Inactive</span>
+                        <span class="text-red-600 font-medium">Nofaol</span>
                     @endif
                 </td>
 
@@ -43,18 +43,18 @@
                 <td class="p-4 text-right space-x-3">
                     <a href="{{ route('admin.categories.edit', $category) }}"
                        class="text-blue-600 hover:underline">
-                        Edit
+                        Tahrirlash
                     </a>
 
                     <form action="{{ route('admin.categories.destroy', $category) }}"
                           method="POST"
                           class="inline"
-                          onsubmit="return confirm('Delete this category?')">
+                          onsubmit="return confirm('Bu kategoriyani o\'chirishni xohlaysizmi?')">
                         @csrf
                         @method('DELETE')
 
                         <button class="text-red-600 hover:underline">
-                            Delete
+                            O'chirish
                         </button>
                     </form>
                 </td>
@@ -62,7 +62,7 @@
         @empty
             <tr>
                 <td colspan="5" class="p-6 text-center text-gray-500">
-                    No categories yet
+                    Hozircha kategoriya yo'q
                 </td>
             </tr>
         @endforelse

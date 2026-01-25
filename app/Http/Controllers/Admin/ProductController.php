@@ -64,7 +64,7 @@ class ProductController extends Controller
 
         return redirect()
             ->route('admin.products.index')
-            ->with('success', 'Product created successfully');
+            ->with('success', 'Mahsulot muvaffaqiyatli yaratildi.');
     }
 
     /**
@@ -111,7 +111,7 @@ class ProductController extends Controller
 
         return redirect()
             ->route('admin.products.index')
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Mahsulot muvaffaqiyatli yangilandi.');
     }
 
     /**
@@ -128,6 +128,6 @@ class ProductController extends Controller
 
         return redirect()
             ->route('admin.products.index')
-            ->with('success', 'Product deleted successfully');
+            ->with('success', 'Mahsulot muvaffaqiyatli o\'chirildi.');
     }
 }

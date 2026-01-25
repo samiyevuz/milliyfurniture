@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('page-title', 'Dashboard')
+@section('page-title', 'Boshqaruv paneli')
 
 @section('content')
 <div class="space-y-6">
@@ -9,7 +9,7 @@
         <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-md transition">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-600 mb-1">Categories</p>
+                    <p class="text-sm font-medium text-gray-600 mb-1">Kategoriyalar</p>
                     <p class="text-3xl font-bold text-[#0A2540]">{{ $categoriesCount }}</p>
                 </div>
                 <div class="w-12 h-12 bg-[#0A4C8A] bg-opacity-10 rounded-lg flex items-center justify-center">
@@ -23,7 +23,7 @@
         <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-md transition">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-600 mb-1">Products</p>
+                    <p class="text-sm font-medium text-gray-600 mb-1">Mahsulotlar</p>
                     <p class="text-3xl font-bold text-[#0A2540]">{{ $productsCount }}</p>
                 </div>
                 <div class="w-12 h-12 bg-[#0A4C8A] bg-opacity-10 rounded-lg flex items-center justify-center">
@@ -37,7 +37,7 @@
         <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-md transition">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-600 mb-1">Gallery Items</p>
+                    <p class="text-sm font-medium text-gray-600 mb-1">Galereya elementlari</p>
                     <p class="text-3xl font-bold text-[#0A2540]">{{ $galleryCount }}</p>
                 </div>
                 <div class="w-12 h-12 bg-[#0A4C8A] bg-opacity-10 rounded-lg flex items-center justify-center">
@@ -52,7 +52,7 @@
     {{-- Latest Products Table --}}
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
-            <h2 class="text-lg font-semibold text-[#0A2540]">Latest Products</h2>
+            <h2 class="text-lg font-semibold text-[#0A2540]">So'nggi mahsulotlar</h2>
         </div>
 
         <div class="overflow-x-auto">
@@ -60,9 +60,9 @@
                 <thead class="bg-gray-50 border-b border-gray-200">
                     <tr>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nomi</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategoriya</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Narxi</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -86,7 +86,7 @@
                                     <svg class="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
                                     </svg>
-                                    <p class="text-sm">No products yet</p>
+                                    <p class="text-sm">Hozircha mahsulot yo'q</p>
                                 </div>
                             </td>
                         </tr>

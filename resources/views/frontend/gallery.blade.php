@@ -5,10 +5,10 @@
 {{-- PAGE HEADER --}}
 <section class="gallery-hero">
     <div class="gallery-hero-container">
-        <h1>Category</h1>
+        <h1>Kategoriyalar</h1>
         <p>
-            Explore our handcrafted furniture collections
-            designed to elevate your living space.
+            Qo'lda yasalgan mebel kolleksiyalarimizni ko'rib chiqing,
+            ular yashash joyingizni yanada qulay va zamonaviy qiladi.
         </p>
     </div>
 </section>
@@ -27,12 +27,12 @@
                     @endif
                     <div class="gallery-item-overlay">
                         <h3>{{ $category->name }}</h3>
-                        <p>{{ $category->products_count ?? 0 }} products</p>
+                        <p>{{ $category->products_count ?? 0 }} mahsulot</p>
                     </div>
                 </a>
             @empty
                 <div class="gallery-item">
-                    <img src="{{ asset('assets/images/gallery-1.png') }}" alt="Category" loading="lazy">
+                        <img src="{{ asset('assets/images/gallery-1.png') }}" alt="Kategoriya" loading="lazy">
                 </div>
                 <div class="gallery-item">
                     <img src="{{ asset('assets/images/gallery-2.png') }}" alt="Category" loading="lazy">

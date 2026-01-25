@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - Milliy Furniture</title>
+    <title>Admin Kirish - Milliy Mebel</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gradient-to-br from-[#0A2540] via-[#0A4C8A] to-[#083b6b] min-h-screen flex items-center justify-center p-4">
@@ -12,11 +12,11 @@
         <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
             {{-- Logo/Header --}}
             <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-[#0A2540] mb-2">Milliy Furniture</h1>
+                <h1 class="text-3xl font-bold text-[#0A2540] mb-2">Milliy Mebel</h1>
                 <p class="text-gray-500 text-sm">Admin Panel</p>
             </div>
 
-            <h2 class="text-2xl font-bold text-[#0A2540] mb-8 text-center">Log in</h2>
+            <h2 class="text-2xl font-bold text-[#0A2540] mb-8 text-center">Kirish</h2>
 
             {{-- Error Messages --}}
             @if ($errors->any())
@@ -43,7 +43,7 @@
                 {{-- Email Field --}}
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address
+                        Elektron pochta
                     </label>
                     <input
                         type="email"
@@ -60,7 +60,7 @@
                 {{-- Password Field --}}
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
-                        Password
+                        Parol
                     </label>
                     <input
                         type="password"
@@ -82,7 +82,7 @@
                             class="w-4 h-4 text-[#0A4C8A] border-gray-300 rounded focus:ring-[#0A4C8A] focus:ring-2"
                         >
                         <label for="remember" class="ml-2 text-sm text-gray-600">
-                            Remember me
+                            Meni eslab qol
                         </label>
                     </div>
                 </div>
@@ -92,13 +92,13 @@
                     type="submit"
                     class="w-full bg-[#0A4C8A] text-white py-3.5 rounded-xl font-semibold hover:bg-[#083b6b] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                    Log in
+                    Kirish
                 </button>
             </form>
 
             {{-- Footer --}}
             <p class="text-center text-xs text-gray-500 mt-8">
-                &copy; {{ date('Y') }} Milliy Furniture. All rights reserved.
+                &copy; {{ date('Y') }} Milliy Mebel. Barcha huquqlar himoyalangan.
             </p>
         </div>
     </div>

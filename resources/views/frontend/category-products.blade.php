@@ -7,8 +7,8 @@
     <div class="gallery-hero-container">
         <h1>{{ $category->name }}</h1>
         <p>
-            Explore our {{ $category->name }} collection
-            designed to elevate your living space.
+            {{ $category->name }} kolleksiyamizni ko'rib chiqing,
+            ular yashash joyingizni yanada qulay va zamonaviy qiladi.
         </p>
     </div>
 </section>
@@ -40,7 +40,7 @@
             @endif
         @else
             <div class="empty-state text-center py-12">
-                <p class="text-gray-500">No products found in this category.</p>
+                <p class="text-gray-500">Bu kategoriyada mahsulot topilmadi.</p>
             </div>
         @endif
     </div>

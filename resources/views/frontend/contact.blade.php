@@ -4,7 +4,7 @@
 <section id="contact" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold mb-8 text-center">
-            Contact
+            Aloqa
         </h2>
 
         @php
@@ -14,13 +14,13 @@
                 $setting = null;
             }
             $days = [
-                'mon' => 'Mon',
-                'tue' => 'Tue',
-                'wed' => 'Wed',
-                'thu' => 'Thu',
-                'fri' => 'Fri',
-                'sat' => 'Sat',
-                'sun' => 'Sun',
+                'mon' => 'Dushanba',
+                'tue' => 'Seshanba',
+                'wed' => 'Chorshanba',
+                'thu' => 'Payshanba',
+                'fri' => 'Juma',
+                'sat' => 'Shanba',
+                'sun' => 'Yakshanba',
             ];
         @endphp
 
@@ -31,7 +31,7 @@
 
                 @if($setting?->phone)
                     <p>
-                        📞 <strong>Phone:</strong>
+                        📞 <strong>Telefon:</strong>
                         <a href="tel:{{ $setting->phone }}" class="text-blue-600 hover:underline">
                             {{ $setting->phone }}
                         </a>
@@ -40,7 +40,7 @@
 
                 @if($setting?->email)
                     <p>
-                        📧 <strong>Email:</strong>
+                        📧 <strong>Elektron pochta:</strong>
                         <a href="mailto:{{ $setting->email }}" class="text-blue-600 hover:underline">
                             {{ $setting->email }}
                         </a>
@@ -49,7 +49,7 @@
 
                 @if($setting?->address)
                     <p>
-                        📍 <strong>Address:</strong>
+                        📍 <strong>Manzil:</strong>
                         {{ $setting->address }}
                     </p>
                 @endif
@@ -77,7 +77,7 @@
             {{-- RIGHT: WORK DAYS --}}
             <div>
                 <h3 class="text-xl font-semibold mb-4">
-                    Working hours
+                    Ish vaqti
                 </h3>
 
                 <ul class="space-y-2 text-gray-700">
@@ -93,7 +93,7 @@
                             @if($from && $to)
                                 <span>{{ $from }} – {{ $to }}</span>
                             @else
-                                <span class="text-gray-400">Closed</span>
+                                <span class="text-gray-400">Yopiq</span>
                             @endif
                         </li>
                     @endforeach

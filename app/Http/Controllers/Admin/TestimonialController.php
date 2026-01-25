@@ -63,7 +63,7 @@ class TestimonialController extends Controller
 
         return redirect()
             ->route('admin.testimonials.index')
-            ->with('success', 'Testimonial created successfully');
+            ->with('success', 'Sharh muvaffaqiyatli yaratildi');
     }
 
     /**
@@ -108,7 +108,7 @@ class TestimonialController extends Controller
 
         return redirect()
             ->route('admin.testimonials.index')
-            ->with('success', 'Testimonial updated successfully');
+            ->with('success', 'Sharh muvaffaqiyatli yangilandi');
     }
 
     /**
@@ -125,6 +125,6 @@ class TestimonialController extends Controller
 
         return redirect()
             ->route('admin.testimonials.index')
-            ->with('success', 'Testimonial deleted successfully');
+            ->with('success', 'Sharh muvaffaqiyatli o\'chirildi');
     }
 }

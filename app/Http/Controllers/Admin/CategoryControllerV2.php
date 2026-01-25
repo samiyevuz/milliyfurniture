@@ -49,7 +49,7 @@ class CategoryControllerV2 extends Controller
 
         return redirect()
             ->route('admin.categories.index')
-            ->with('success', 'Category created successfully');
+            ->with('success', 'Kategoriya muvaffaqiyatli yaratildi');
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryControllerV2 extends Controller
 
         return redirect()
             ->route('admin.categories.index')
-            ->with('success', 'Category updated successfully');
+            ->with('success', 'Kategoriya muvaffaqiyatli yangilandi');
     }
 
     /**
@@ -96,6 +96,6 @@ class CategoryControllerV2 extends Controller
 
         return redirect()
             ->route('admin.categories.index')
-            ->with('success', 'Category deleted successfully');
+            ->with('success', 'Kategoriya muvaffaqiyatli o\'chirildi');
     }
 }
