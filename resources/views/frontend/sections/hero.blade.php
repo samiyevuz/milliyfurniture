@@ -6,24 +6,24 @@
 
     <div class="hero-card">
         <span class="text-xs uppercase tracking-[0.3em] text-gray-500">
-            New Arrival
+            Yangi Mahsulotlar
         </span>
 
         <h1 class="mt-5 text-[44px] font-bold text-[#0A2540] leading-tight">
-            Discover Our <br>
-            New Collection
+            Yangi Kolleksiyamizni <br>
+            Kashing
         </h1>
 
         <p class="mt-6 text-gray-600 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Ut elit tellus, luctus nec ullamcorper mattis.
+            Bizning qo'lda yasalgan mebel kolleksiyamizni kashing.
+            Ular yashash joyingizni yanada qulay va zamonaviy qiladi.
         </p>
 
         <a href="#"
            class="inline-flex items-center justify-center mt-10 px-12 py-4
                   rounded-full bg-[#0A4C8A] text-white font-semibold
                   hover:bg-[#083b6b] transition">
-            Buy Now
+            Hozir Sotib Oling
         </a>
     </div>
 </section>
@@ -39,28 +39,28 @@
                 <img src="{{ asset('assets/icons/delivery.svg') }}" alt="Free Delivery" loading="lazy">
             </div>
             <div class="feature-text">
-                <h4>Free Delivery</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h4>Bepul Yetkazib Berish</h4>
+                <p>Barcha buyurtmalar bepul yetkazib beriladi.</p>
             </div>
         </div>
 
         <div class="feature-item">
             <div class="feature-icon">
-                <img src="{{ asset('assets/icons/support.svg') }}" alt="Support 24/7" loading="lazy">
+                <img src="{{ asset('assets/icons/support.svg') }}" alt="24/7 Qo'llab-quvvatlash" loading="lazy">
             </div>
             <div class="feature-text">
-                <h4>Support 24/7</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h4>24/7 Qo'llab-quvvatlash</h4>
+                <p>Kun bo'yi qo'llab-quvvatlash xizmati.</p>
             </div>
         </div>
 
         <div class="feature-item">
             <div class="feature-icon">
-                <img src="{{ asset('assets/icons/shield.svg') }}" alt="100% Authentic" loading="lazy">
+                <img src="{{ asset('assets/icons/shield.svg') }}" alt="100% Haqiqiy" loading="lazy">
             </div>
             <div class="feature-text">
-                <h4>100% Authentic</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h4>100% Haqiqiy</h4>
+                <p>Barcha mahsulotlarimiz haqiqiy va sifatli.</p>
             </div>
         </div>
 
@@ -75,8 +75,8 @@
     <div class="inspiration-container">
 
         <div class="inspiration-header">
-            <h2>Inspiration Collection</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Ilhom Kolleksiyasi</h2>
+            <p>Bizning mebel kolleksiyamizdan ilhomlaning va xonangizni go'zallashtiring.</p>
         </div>
 
         <div class="inspiration-grid">
@@ -103,14 +103,14 @@
     <div class="beautify-container">
 
         <div class="beautify-content">
-            <h2>Beautify Your Space</h2>
+            <h2>Xonangizni Go'zallashtiring</h2>
 
             <p>
-                Do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                Bizning mebellarimiz bilan xonangizni zamonaviy va qulay qiling.
+                Har bir mahsulotimiz sizning yashash joyingizni yanada go'zal qiladi.
             </p>
 
-            <a href="#" class="beautify-btn">Learn More</a>
+            <a href="#" class="beautify-btn">Ko'proq Biling</a>
         </div>
 
         <div class="beautify-image">
@@ -127,8 +127,8 @@
     <div class="browse-container">
 
         <div class="browse-header">
-            <h2>Browse The Range</h2>
-            <p>Explore our handcrafted furniture collections designed to elevate your living space.</p>
+            <h2>Kategoriyalarni Ko'rib Chiqing</h2>
+            <p>Qo'lda yasalgan mebel kolleksiyalarimizni ko'rib chiqing, ular yashash joyingizni yanada qulay va zamonaviy qiladi.</p>
         </div>
 
         <div class="browse-grid">
@@ -143,16 +143,16 @@
                 </div>
             @empty
                 <div class="browse-card">
-                    <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Dining" loading="lazy">
-                    <h4>Dining</h4>
+                    <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Ovqatlanish" loading="lazy">
+                    <h4>Ovqatlanish</h4>
                 </div>
                 <div class="browse-card">
-                    <img src="{{ asset('assets/images/browse-living.png') }}" alt="Living" loading="lazy">
-                    <h4>Living</h4>
+                    <img src="{{ asset('assets/images/browse-living.png') }}" alt="Yashash xonasi" loading="lazy">
+                    <h4>Yashash xonasi</h4>
                 </div>
                 <div class="browse-card">
-                    <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Bedroom" loading="lazy">
-                    <h4>Bedroom</h4>
+                    <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Yotoq xonasi" loading="lazy">
+                    <h4>Yotoq xonasi</h4>
                 </div>
             @endforelse
         </div>
@@ -269,7 +269,7 @@
                 required
             >
             <button type="submit">
-                Submit
+                Yuborish
             </button>
         </form>
 
@@ -285,13 +285,13 @@
 
         {{-- LEFT --}}
         <div class="footer-about">
-            <h4>Beauty Care</h4>
+            <h4>Milliy Mebel</h4>
             <p>
-                Do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                Bizning mebellarimiz yuqori sifatli materiallardan tayyorlanadi.
+                Har bir mahsulotimiz sizning yashash joyingizni yanada qulay va zamonaviy qiladi.
             </p>
 
-            <span class="footer-label">Follow Us</span>
+            <span class="footer-label">Bizni Kuzatib Boring</span>
             <div class="footer-socials">
                 <a href="#" aria-label="Instagram"><img src="{{ asset('assets/images/footer-insta.svg') }}" alt="Instagram" loading="lazy"></a>
                 <a href="#" aria-label="Telegram"><img src="{{ asset('assets/images/footer-tg.svg') }}" alt="Telegram" loading="lazy"></a>
@@ -300,7 +300,7 @@
 
         {{-- RIGHT --}}
         <div class="footer-instagram">
-            <h4>Instagram Shop</h4>
+            <h4>Instagram Do'koni</h4>
 
             <div class="instagram-grid">
                 <img src="{{ asset('assets/images/insta-1.png') }}" alt="Instagram Gallery 1" loading="lazy">
