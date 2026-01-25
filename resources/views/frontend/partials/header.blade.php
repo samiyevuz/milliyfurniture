@@ -13,7 +13,7 @@
             </a>
 
             <a href="{{ route('gallery') }}" class="hover:text-[#0A4C8A] transition">
-                Gallery
+                Category
             </a>
 
             <a href="{{ route('contact') }}" class="hover:text-[#0A4C8A] transition">

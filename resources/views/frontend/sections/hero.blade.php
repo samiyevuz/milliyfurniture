@@ -122,32 +122,39 @@
 
 
 
-{{-- BROWSE THE RANGE --}}
+{{-- BROWSE THE RANGE (CATEGORIES) --}}
 <section class="browse-section">
     <div class="browse-container">
 
         <div class="browse-header">
             <h2>Browse The Range</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Explore our handcrafted furniture collections designed to elevate your living space.</p>
         </div>
 
         <div class="browse-grid">
-
-            <div class="browse-card">
-                <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Dining" loading="lazy">
-                <h4>Dining</h4>
-            </div>
-
-            <div class="browse-card">
-                <img src="{{ asset('assets/images/browse-living.png') }}" alt="Living" loading="lazy">
-                <h4>Living</h4>
-            </div>
-
-            <div class="browse-card">
-                <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Bedroom" loading="lazy">
-                <h4>Bedroom</h4>
-            </div>
-
+            @forelse($categories as $category)
+                <div class="browse-card">
+                    @if($category->image)
+                        <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" loading="lazy">
+                    @else
+                        <img src="{{ asset('assets/images/browse-dining.png') }}" alt="{{ $category->name }}" loading="lazy">
+                    @endif
+                    <h4>{{ $category->name }}</h4>
+                </div>
+            @empty
+                <div class="browse-card">
+                    <img src="{{ asset('assets/images/browse-dining.png') }}" alt="Dining" loading="lazy">
+                    <h4>Dining</h4>
+                </div>
+                <div class="browse-card">
+                    <img src="{{ asset('assets/images/browse-living.png') }}" alt="Living" loading="lazy">
+                    <h4>Living</h4>
+                </div>
+                <div class="browse-card">
+                    <img src="{{ asset('assets/images/browse-bedroom.png') }}" alt="Bedroom" loading="lazy">
+                    <h4>Bedroom</h4>
+                </div>
+            @endforelse
         </div>
 
     </div>

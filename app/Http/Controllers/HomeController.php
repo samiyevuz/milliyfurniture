@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Response;
 
 class HomeController extends Controller
 {
@@ -12,15 +12,24 @@ class HomeController extends Controller
      */
     public function index(): View
     {
-        return view('frontend.home');
+        $categories = Category::active()
+            ->latest()
+            ->take(6)
+            ->get();
+
+        return view('frontend.home', compact('categories'));
     }
 
     /**
-     * Display the gallery page.
+     * Display the categories page.
      */
     public function gallery(): View
     {
-        return view('frontend.gallery');
+        $categories = Category::active()
+            ->latest()
+            ->get();
+
+        return view('frontend.gallery', compact('categories'));
     }
 
     /**
