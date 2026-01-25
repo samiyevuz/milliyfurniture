@@ -175,21 +175,37 @@
 
         @if($testimonials->count() > 0)
             <div class="how-carousel-wrapper">
-                <div class="how-carousel" id="testimonialsCarousel">
-                    @foreach($testimonials as $testimonial)
-                        <div class="how-card carousel-item">
-                            <div class="how-image">
-                                @if($testimonial->image ?? null)
-                                    <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
-                                @else
-                                    <img src="{{ asset('assets/images/how-1.png') }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
-                                @endif
-                                <span class="how-step">{{ $testimonial->step_number ?? 1 }}</span>
+                {{-- Navigation Arrows --}}
+                @if($testimonials->count() > 1)
+                    <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Previous slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Next slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                @endif
+
+                <div class="how-carousel-container">
+                    <div class="how-carousel" id="testimonialsCarousel">
+                        @foreach($testimonials as $testimonial)
+                            <div class="how-card carousel-item">
+                                <div class="how-image">
+                                    @if($testimonial->image ?? null)
+                                        <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
+                                    @else
+                                        <img src="{{ asset('assets/images/how-1.png') }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
+                                    @endif
+                                    <span class="how-step">{{ $testimonial->step_number ?? 1 }}</span>
+                                </div>
+                                <h4>{{ $testimonial->title ?? 'Untitled' }}</h4>
+                                <p>{{ $testimonial->description ?? '' }}</p>
                             </div>
-                            <h4>{{ $testimonial->title ?? 'Untitled' }}</h4>
-                            <p>{{ $testimonial->description ?? '' }}</p>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
                 
                 {{-- Carousel Navigation Dots --}}

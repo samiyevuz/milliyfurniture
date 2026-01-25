@@ -31,15 +31,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carousel) {
         const items = carousel.querySelectorAll('.carousel-item');
         const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
         let currentIndex = 0;
         let autoSlideInterval;
+
+        // Calculate item width (including gap)
+        function getItemWidth() {
+            if (items.length === 0) return 0;
+            const item = items[0];
+            const itemWidth = item.offsetWidth;
+            const gap = 24; // gap between items
+            return itemWidth + gap;
+        }
 
         // Function to show specific slide
         function showSlide(index) {
             if (items.length === 0) return;
             
-            currentIndex = index;
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            // Clamp index to valid range
+            currentIndex = Math.max(0, Math.min(index, items.length - 1));
+            
+            // Calculate transform
+            const itemWidth = getItemWidth();
+            const offset = currentIndex * itemWidth;
+            
+            // Center the active item
+            const containerWidth = carousel.parentElement.offsetWidth;
+            const centerOffset = (containerWidth / 2) - (itemWidth / 2);
+            
+            carousel.style.transform = `translateX(calc(-${offset}px + ${centerOffset}px))`;
+            
+            // Update active class on items
+            items.forEach((item, i) => {
+                if (i === currentIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
             
             // Update dots
             dots.forEach((dot, i) => {
@@ -50,6 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Function to go to next slide
         function nextSlide() {
             currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
+        }
+
+        // Function to go to previous slide
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
             showSlide(currentIndex);
         }
 
@@ -64,6 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Navigation button handlers
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+
         // Dot click handlers
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
@@ -74,12 +127,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Pause on hover
-        carousel.addEventListener('mouseenter', stopAutoSlide);
-        carousel.addEventListener('mouseleave', startAutoSlide);
+        const carouselWrapper = carousel.closest('.how-carousel-wrapper');
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener('mouseenter', stopAutoSlide);
+            carouselWrapper.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        // Initialize
+        showSlide(0);
 
         // Start auto-slide
         if (items.length > 1) {
             startAutoSlide();
         }
+
+        // Recalculate on window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                showSlide(currentIndex);
+            }, 250);
+        });
     }
 });
