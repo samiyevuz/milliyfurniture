@@ -16,7 +16,7 @@ class DashboardController extends Controller
     {
         $categoriesCount = Category::count();
         $productsCount = Product::count();
-        $galleryCount = 0; // Gallery model yo'q bo'lsa, 0 qaytaradi
+        $galleryCount = 0;
         
         $latestProducts = Product::with('category')
             ->latest()
