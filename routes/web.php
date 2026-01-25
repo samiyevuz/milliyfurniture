@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryControllerV2;
 use App\Http\Controllers\Admin\ProductController;
@@ -20,10 +21,27 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 /*
 |--------------------------------------------------------------------------
-| Admin Routes
+| Admin Authentication Routes
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])
+        ->middleware('guest')
+        ->name('login');
+    Route::post('/login', [LoginController::class, 'login'])
+        ->middleware('guest')
+        ->name('login');
+    Route::post('/logout', [LoginController::class, 'logout'])
+        ->middleware('auth')
+        ->name('logout');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes (Protected)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     /*
     | Dashboard
     */
