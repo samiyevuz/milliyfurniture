@@ -25,6 +25,11 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->name('admin.')->group(function () {
+    // /admin ga kirganda login sahifasini ko'rsatish
+    Route::get('/', [LoginController::class, 'showLoginForm'])
+        ->middleware('guest')
+        ->name('login');
+    
     Route::get('/login', [LoginController::class, 'showLoginForm'])
         ->middleware('guest')
         ->name('login');
@@ -45,7 +50,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     /*
     | Dashboard
     */
-    Route::get('/', [DashboardController::class, 'index'])
+    Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
 
     /*

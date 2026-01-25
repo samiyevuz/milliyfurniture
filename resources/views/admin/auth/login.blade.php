@@ -6,17 +6,17 @@
     <title>Admin Login - Milliy Furniture</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
     <div class="w-full max-w-md">
         {{-- Logo/Header --}}
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold text-[#0A2540] mb-2">Milliy Furniture</h1>
-            <p class="text-gray-600">Admin Panel</p>
+            <p class="text-gray-600 text-sm">Admin Panel</p>
         </div>
 
         {{-- Login Card --}}
-        <div class="bg-white rounded-2xl shadow-xl p-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Login</h2>
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+            <h2 class="text-2xl font-bold text-[#0A2540] mb-6 text-center">Login</h2>
 
             {{-- Error Messages --}}
             @if ($errors->any())
@@ -52,7 +52,7 @@
                         value="{{ old('email') }}"
                         required
                         autofocus
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4C8A] focus:border-transparent outline-none transition"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4C8A] focus:border-[#0A4C8A] outline-none transition bg-white"
                         placeholder="admin@example.com"
                     >
                 </div>
@@ -67,7 +67,7 @@
                         id="password"
                         name="password"
                         required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4C8A] focus:border-transparent outline-none transition"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4C8A] focus:border-[#0A4C8A] outline-none transition bg-white"
                         placeholder="••••••••"
                     >
                 </div>
