@@ -179,15 +179,15 @@
                     @foreach($testimonials as $testimonial)
                         <div class="how-card carousel-item">
                             <div class="how-image">
-                                @if($testimonial->image)
-                                    <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->title }}" loading="lazy">
+                                @if($testimonial->image ?? null)
+                                    <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
                                 @else
-                                    <img src="{{ asset('assets/images/how-1.png') }}" alt="{{ $testimonial->title }}" loading="lazy">
+                                    <img src="{{ asset('assets/images/how-1.png') }}" alt="{{ $testimonial->title ?? 'Testimonial' }}" loading="lazy">
                                 @endif
-                                <span class="how-step">{{ $testimonial->step_number }}</span>
+                                <span class="how-step">{{ $testimonial->step_number ?? 1 }}</span>
                             </div>
-                            <h4>{{ $testimonial->title }}</h4>
-                            <p>{{ $testimonial->description }}</p>
+                            <h4>{{ $testimonial->title ?? 'Untitled' }}</h4>
+                            <p>{{ $testimonial->description ?? '' }}</p>
                         </div>
                     @endforeach
                 </div>
