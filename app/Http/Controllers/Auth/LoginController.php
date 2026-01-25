@@ -13,13 +13,8 @@ class LoginController extends Controller
     /**
      * Show the login form.
      */
-    public function showLoginForm(): View|RedirectResponse
+    public function showLoginForm(): View
     {
-        // Agar foydalanuvchi allaqachon login qilgan bo'lsa, dashboard'ga yo'naltirish
-        if (Auth::check()) {
-            return redirect()->route('admin.dashboard');
-        }
-        
         return view('admin.auth.login');
     }
 

@@ -25,12 +25,13 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->name('admin.')->group(function () {
-    // /admin ga kirganda login sahifasini ko'rsatish (yoki dashboard'ga yo'naltirish)
-    Route::get('/', [LoginController::class, 'showLoginForm']);
-    
-    Route::get('/login', [LoginController::class, 'showLoginForm'])
+    // /admin ga kirganda login sahifasini ko'rsatish
+    Route::get('/', [LoginController::class, 'showLoginForm'])
         ->middleware('guest')
         ->name('login');
+    
+    Route::get('/login', [LoginController::class, 'showLoginForm'])
+        ->middleware('guest');
     Route::post('/login', [LoginController::class, 'login'])
         ->middleware('guest');
     Route::post('/logout', [LoginController::class, 'logout'])
