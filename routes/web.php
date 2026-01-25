@@ -25,9 +25,8 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->name('admin.')->group(function () {
-    // /admin ga kirganda login sahifasini ko'rsatish
+    // /admin ga kirganda login sahifasini ko'rsatish (yoki dashboard'ga yo'naltirish)
     Route::get('/', [LoginController::class, 'showLoginForm'])
-        ->middleware('guest')
         ->name('login');
     
     Route::get('/login', [LoginController::class, 'showLoginForm'])
