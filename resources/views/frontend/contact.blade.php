@@ -1,3 +1,6 @@
+@extends('frontend.layouts.app')
+
+@section('content')
 <section id="contact" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold mb-8 text-center">
@@ -5,7 +8,11 @@
         </h2>
 
         @php
-            $setting = \App\Models\Setting::first();
+            try {
+                $setting = \App\Models\Setting::first();
+            } catch (\Exception $e) {
+                $setting = null;
+            }
             $days = [
                 'mon' => 'Mon',
                 'tue' => 'Tue',
@@ -25,7 +32,7 @@
                 @if($setting?->phone)
                     <p>
                         📞 <strong>Phone:</strong>
-                        <a href="tel:{{ $setting->phone }}" class="text-blue-600">
+                        <a href="tel:{{ $setting->phone }}" class="text-blue-600 hover:underline">
                             {{ $setting->phone }}
                         </a>
                     </p>
@@ -34,7 +41,7 @@
                 @if($setting?->email)
                     <p>
                         📧 <strong>Email:</strong>
-                        <a href="mailto:{{ $setting->email }}" class="text-blue-600">
+                        <a href="mailto:{{ $setting->email }}" class="text-blue-600 hover:underline">
                             {{ $setting->email }}
                         </a>
                     </p>
@@ -50,7 +57,7 @@
                 @if($setting?->telegram)
                     <p>
                         💬 <strong>Telegram:</strong>
-                        <a href="{{ $setting->telegram }}" target="_blank" class="text-blue-600">
+                        <a href="{{ $setting->telegram }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
                             {{ $setting->telegram }}
                         </a>
                     </p>
@@ -59,7 +66,7 @@
                 @if($setting?->instagram)
                     <p>
                         📸 <strong>Instagram:</strong>
-                        <a href="{{ $setting->instagram }}" target="_blank" class="text-blue-600">
+                        <a href="{{ $setting->instagram }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
                             {{ $setting->instagram }}
                         </a>
                     </p>
@@ -96,3 +103,4 @@
         </div>
     </div>
 </section>
+@endsection
