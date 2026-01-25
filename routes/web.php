@@ -27,15 +27,13 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::prefix('admin')->name('admin.')->group(function () {
     // /admin ga kirganda login sahifasini ko'rsatish
     Route::get('/', [LoginController::class, 'showLoginForm'])
-        ->middleware('guest')
-        ->name('login');
+        ->middleware('guest');
     
     Route::get('/login', [LoginController::class, 'showLoginForm'])
         ->middleware('guest')
         ->name('login');
     Route::post('/login', [LoginController::class, 'login'])
-        ->middleware('guest')
-        ->name('login');
+        ->middleware('guest');
     Route::post('/logout', [LoginController::class, 'logout'])
         ->middleware('auth')
         ->name('logout');

@@ -37,7 +37,7 @@
             @endif
 
             {{-- Login Form --}}
-            <form method="POST" action="{{ route('admin.login') }}" class="space-y-6">
+            <form method="POST" action="{{ url('/admin/login') }}" class="space-y-6">
                 @csrf
 
                 {{-- Email Field --}}
