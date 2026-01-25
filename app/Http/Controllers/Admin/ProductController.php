@@ -44,6 +44,8 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'category_id' => 'required|exists:categories,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'status' => 'sometimes|boolean',
         ]);
 
@@ -58,6 +60,15 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('products', 'public');
+        }
+
+        // Handle multiple images
+        if ($request->hasFile('images')) {
+            $images = [];
+            foreach ($request->file('images') as $file) {
+                $images[] = $file->store('products', 'public');
+            }
+            $data['images'] = $images;
         }
 
         Product::create($data);
@@ -107,6 +118,31 @@ class ProductController extends Controller
             $data['image'] = $request->file('image')->store('products', 'public');
         }
 
+        // Handle existing images
+        $existingImages = $product->images ?? [];
+        if ($request->has('existing_images')) {
+            $existingImages = $request->input('existing_images', []);
+        }
+
+        // Remove deleted images
+        if ($request->has('removed_images')) {
+            foreach ($request->input('removed_images', []) as $removedImage) {
+                \Storage::disk('public')->delete($removedImage);
+                $existingImages = array_values(array_filter($existingImages, function($img) use ($removedImage) {
+                    return $img !== $removedImage;
+                }));
+            }
+        }
+
+        // Add new images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $file) {
+                $existingImages[] = $file->store('products', 'public');
+            }
+        }
+
+        $data['images'] = $existingImages;
+
         $product->update($data);
 
         return redirect()
@@ -122,6 +158,13 @@ class ProductController extends Controller
         // Delete image if exists
         if ($product->image) {
             \Storage::disk('public')->delete($product->image);
+        }
+
+        // Delete multiple images if exist
+        if ($product->images && is_array($product->images)) {
+            foreach ($product->images as $image) {
+                \Storage::disk('public')->delete($image);
+            }
         }
 
         $product->delete();

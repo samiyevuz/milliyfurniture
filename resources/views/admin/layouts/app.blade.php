@@ -121,5 +121,62 @@
         </main>
     </div>
 </div>
+
+<script>
+// Multiple Images Upload Functions
+function addImageInput() {
+    const container = document.getElementById('images-container');
+    const wrapper = document.createElement('div');
+    wrapper.className = 'image-input-wrapper flex items-center gap-3';
+    wrapper.innerHTML = `
+        <input type="file"
+               name="images[]"
+               accept="image/*"
+               class="flex-1 px-4 py-2.5 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0A4C8A] focus:border-[#0A4C8A] outline-none transition">
+        <button type="button" onclick="removeImageInput(this)" class="px-4 py-2.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition remove-btn">
+            O'chirish
+        </button>
+    `;
+    container.appendChild(wrapper);
+    
+    // Show remove buttons if there are multiple inputs
+    updateRemoveButtons();
+}
+
+function removeImageInput(button) {
+    const wrapper = button.closest('.image-input-wrapper');
+    wrapper.remove();
+    updateRemoveButtons();
+}
+
+function updateRemoveButtons() {
+    const wrappers = document.querySelectorAll('.image-input-wrapper');
+    const removeButtons = document.querySelectorAll('.remove-btn');
+    
+    if (wrappers.length > 1) {
+        removeButtons.forEach(btn => btn.classList.remove('hidden'));
+    } else {
+        removeButtons.forEach(btn => btn.classList.add('hidden'));
+    }
+}
+
+function removeExistingImage(imagePath) {
+    const imgElement = event.target.closest('.relative');
+    const hiddenInput = imgElement.querySelector('input[type="hidden"]');
+    
+    if (hiddenInput) {
+        hiddenInput.name = 'removed_images[]';
+    }
+    
+    imgElement.remove();
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateRemoveButtons();
+});
+</script>
+
+@stack('scripts')
 </body>
 </html>

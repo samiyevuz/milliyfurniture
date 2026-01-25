@@ -17,6 +17,7 @@ class Product extends Model
         'description',
         'price',
         'image',
+        'images',
         'status',
         'category_id',
     ];
@@ -25,6 +26,7 @@ class Product extends Model
         'price' => 'decimal:2',
         'status' => 'boolean',
         'category_id' => 'integer',
+        'images' => 'array',
     ];
 
     /**

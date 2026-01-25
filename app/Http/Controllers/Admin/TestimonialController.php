@@ -40,6 +40,8 @@ class TestimonialController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'status' => 'sometimes|boolean',
         ]);
 
@@ -57,6 +59,15 @@ class TestimonialController extends Controller
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('testimonials', 'public');
+        }
+
+        // Handle multiple images
+        if ($request->hasFile('images')) {
+            $images = [];
+            foreach ($request->file('images') as $file) {
+                $images[] = $file->store('testimonials', 'public');
+            }
+            $data['images'] = $images;
         }
 
         Testimonial::create($data);
@@ -83,6 +94,10 @@ class TestimonialController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'existing_images' => 'nullable|array',
+            'removed_images' => 'nullable|array',
             'step_number' => 'required|integer|min:1|max:10',
             'status' => 'sometimes|boolean',
             'order' => 'nullable|integer|min:0',
@@ -104,6 +119,31 @@ class TestimonialController extends Controller
             $data['image'] = $request->file('image')->store('testimonials', 'public');
         }
 
+        // Handle existing images
+        $existingImages = $testimonial->images ?? [];
+        if ($request->has('existing_images')) {
+            $existingImages = $request->input('existing_images', []);
+        }
+
+        // Remove deleted images
+        if ($request->has('removed_images')) {
+            foreach ($request->input('removed_images', []) as $removedImage) {
+                \Storage::disk('public')->delete($removedImage);
+                $existingImages = array_values(array_filter($existingImages, function($img) use ($removedImage) {
+                    return $img !== $removedImage;
+                }));
+            }
+        }
+
+        // Add new images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $file) {
+                $existingImages[] = $file->store('testimonials', 'public');
+            }
+        }
+
+        $data['images'] = $existingImages;
+
         $testimonial->update($data);
 
         return redirect()
@@ -119,6 +159,13 @@ class TestimonialController extends Controller
         // Rasmni o'chirish
         if ($testimonial->image) {
             \Storage::disk('public')->delete($testimonial->image);
+        }
+
+        // Delete multiple images if exist
+        if ($testimonial->images && is_array($testimonial->images)) {
+            foreach ($testimonial->images as $image) {
+                \Storage::disk('public')->delete($image);
+            }
         }
 
         $testimonial->delete();

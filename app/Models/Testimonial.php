@@ -15,6 +15,7 @@ class Testimonial extends Model
         'title',
         'description',
         'image',
+        'images',
         'step_number',
         'status',
         'order',
@@ -24,6 +25,7 @@ class Testimonial extends Model
         'status' => 'boolean',
         'step_number' => 'integer',
         'order' => 'integer',
+        'images' => 'array',
     ];
 
     /**
