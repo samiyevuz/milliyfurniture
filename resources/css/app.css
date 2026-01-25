@@ -407,6 +407,63 @@ html {
     color: #6b7280;
 }
 
+/* Carousel Styles */
+.how-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.how-carousel {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    gap: 32px;
+}
+
+.how-carousel .carousel-item {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+/* Carousel Navigation Dots */
+.how-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: #9ca3af;
+}
+
+.carousel-dot.active {
+    background: #0a4c8a;
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* Responsive Carousel */
+@media (max-width: 768px) {
+    .how-carousel {
+        gap: 24px;
+    }
+    
+    .how-carousel-dots {
+        margin-top: 32px;
+    }
+}
+
 
 
 

@@ -2,6 +2,7 @@ import './bootstrap';
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Time input formatting
     document.querySelectorAll('.time-input').forEach(input => {
 
         input.addEventListener('input', e => {
@@ -24,4 +25,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     });
+
+    // Testimonials Carousel
+    const carousel = document.getElementById('testimonialsCarousel');
+    if (carousel) {
+        const items = carousel.querySelectorAll('.carousel-item');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Function to show specific slide
+        function showSlide(index) {
+            if (items.length === 0) return;
+            
+            currentIndex = index;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        // Function to go to next slide
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
+        }
+
+        // Auto-slide every 2 seconds
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 2000);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+        }
+
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoSlide();
+                showSlide(index);
+                startAutoSlide();
+            });
+        });
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopAutoSlide);
+        carousel.addEventListener('mouseleave', startAutoSlide);
+
+        // Start auto-slide
+        if (items.length > 1) {
+            startAutoSlide();
+        }
+    }
 });

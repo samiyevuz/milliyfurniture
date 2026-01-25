@@ -1,0 +1,128 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Models\Testimonial;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use Illuminate\Validation\Rule;
+
+class TestimonialController extends Controller
+{
+    /**
+     * Display a listing of the testimonials.
+     */
+    public function index(): View
+    {
+        $testimonials = Testimonial::ordered()
+            ->latest()
+            ->paginate(15);
+
+        return view('admin.testimonials.index', compact('testimonials'));
+    }
+
+    /**
+     * Show the form for creating a new testimonial.
+     */
+    public function create(): View
+    {
+        return view('admin.testimonials.create');
+    }
+
+    /**
+     * Store a newly created testimonial in storage.
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'step_number' => 'required|integer|min:1|max:10',
+            'status' => 'sometimes|boolean',
+            'order' => 'nullable|integer|min:0',
+        ]);
+
+        $data = [
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'step_number' => $validated['step_number'],
+            'status' => $request->boolean('status', true),
+            'order' => $validated['order'] ?? 0,
+        ];
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('testimonials', 'public');
+        }
+
+        Testimonial::create($data);
+
+        return redirect()
+            ->route('admin.testimonials.index')
+            ->with('success', 'Testimonial created successfully');
+    }
+
+    /**
+     * Show the form for editing the specified testimonial.
+     */
+    public function edit(Testimonial $testimonial): View
+    {
+        return view('admin.testimonials.edit', compact('testimonial'));
+    }
+
+    /**
+     * Update the specified testimonial in storage.
+     */
+    public function update(Request $request, Testimonial $testimonial): RedirectResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'step_number' => 'required|integer|min:1|max:10',
+            'status' => 'sometimes|boolean',
+            'order' => 'nullable|integer|min:0',
+        ]);
+
+        $data = [
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'step_number' => $validated['step_number'],
+            'status' => $request->boolean('status', $testimonial->status),
+            'order' => $validated['order'] ?? $testimonial->order ?? 0,
+        ];
+
+        if ($request->hasFile('image')) {
+            // Eski rasmni o'chirish
+            if ($testimonial->image) {
+                \Storage::disk('public')->delete($testimonial->image);
+            }
+            $data['image'] = $request->file('image')->store('testimonials', 'public');
+        }
+
+        $testimonial->update($data);
+
+        return redirect()
+            ->route('admin.testimonials.index')
+            ->with('success', 'Testimonial updated successfully');
+    }
+
+    /**
+     * Remove the specified testimonial from storage.
+     */
+    public function destroy(Testimonial $testimonial): RedirectResponse
+    {
+        // Rasmni o'chirish
+        if ($testimonial->image) {
+            \Storage::disk('public')->delete($testimonial->image);
+        }
+
+        $testimonial->delete();
+
+        return redirect()
+            ->route('admin.testimonials.index')
+            ->with('success', 'Testimonial deleted successfully');
+    }
+}

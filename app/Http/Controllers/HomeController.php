@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Testimonial;
 use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
@@ -17,7 +18,11 @@ class HomeController extends Controller
             ->take(6)
             ->get();
 
-        return view('frontend.home', compact('categories'));
+        $testimonials = Testimonial::active()
+            ->ordered()
+            ->get();
+
+        return view('frontend.home', compact('categories', 'testimonials'));
     }
 
     /**
